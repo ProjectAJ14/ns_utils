@@ -49,13 +49,13 @@ import 'package:ns_utils/src.dart';
 
 
 
-## CustomErrorWidget - Responsive App in Flutter
+## CustomErrorWidget
 
 ![Demo](https://miro.medium.com/max/1000/1*KcW6GbjeMUO2zeiGV7KRzQ.png)
 
 Read [Flutter -: KILL THE RED SCREEN OF DEATH](https://medium.com/nonstopio/flutter-kill-the-red-screen-of-death-f5e0601d1cdc) for detailed explanation.
 
-## Sizes - Responsive App in Flutter
+## Sizes
 
 ![Demo](https://miro.medium.com/max/2160/1*zNcRtlhzm9407KJWtAFnFw.png)
 
