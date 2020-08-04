@@ -2,7 +2,7 @@
 
 🦾 Set of methods/extensions for flutter that makes using framework in a much easier and clean way also adds additional functionality.
 
-## Let get started
+## Let's get started
 
 1. Go to `pubspec.yaml` 
 2. add a ns_utils and replace `[version]` with the latest version:  
@@ -22,6 +22,10 @@ import 'package:ns_utils/src.dart';
 ```
 
 ## What's in the box
+
+⚫ `CustomErrorWidget` custom error widget 🦾
+
+⚫ `Sizes` responsive app 🦾
 
 ⚫ `BuildContext` extensions 🦾
 
@@ -43,7 +47,20 @@ import 'package:ns_utils/src.dart';
 
 ⚫ `Spacers` spacers widgets 🦾
 
-⚫ `Sizes` responsive app 🦾
+
+
+## CustomErrorWidget - Responsive App in Flutter
+
+![Demo](https://miro.medium.com/max/1000/1*KcW6GbjeMUO2zeiGV7KRzQ.png)
+
+Read [Flutter -: KILL THE RED SCREEN OF DEATH](https://medium.com/nonstopio/flutter-kill-the-red-screen-of-death-f5e0601d1cdc) for detailed explanation.
+
+## Sizes - Responsive App in Flutter
+
+![Demo](https://miro.medium.com/max/2160/1*zNcRtlhzm9407KJWtAFnFw.png)
+
+Read [Responsive App in Flutter](https://medium.com/nonstopio/let-make-responsive-app-in-flutter-e48428795476) for detailed explanation.
+
 
 ## BuildContext Extensions
 
@@ -78,36 +95,43 @@ Are you still typing `MediaQuery.of(context).size...` or `Navigator.of(this).pus
 ✅ context.mq.sizeX.height;
 ```
 
+```dart
+FocusNode focusNode=FocusNode();
+❌ FocusScope.of(context).requestFocus(focusNode);
+
+✅ context.setFocus(focusNode:focusNode);
+```
+
 ## DateTime Extensions
 
-### .dayDifference
+### `.dayDifference`
 If value is NULL returns [Null]
 Else returns the difference between current date and the object in days
 excluding the the time values
 
-### .toServerFormat()
+### `.toServerFormat()`
 Returns an ISO-8601 full-precision extended format representation.
 
-### .isToday
+### `.isToday`
 return true if the date is today
 
-### .isYesterday
+### `.isYesterday`
 return true if the date is Yesterday
 
-### .isTomorrow
+### `.isTomorrow`
 return true if the date is Tomorrow
 
-### .tomorrow()
+### `.tomorrow()`
 return next day
 
-### .yesterday()
+### `.yesterday()`
 
 return previous day
 
 ## Map Extensions
 
-### .getBool('key')  .getInt('key')  .getDouble('key') 
-### .getString('key')  .getList('key')  .getMap('key')  
+### `.getBool('key')`  `.getInt('key')`  `.getDouble('key')`
+### `.getString('key')`  `.getList('key')`  `.getMap('key')`  
 Reads a [key] value from [Map].
 If value is NULL or not same type return default value [defaultValue]
 
@@ -126,7 +150,7 @@ If value is NULL or not same type return default value [defaultValue]
       expect(data.getBool('key'), false);
     });
 ```
-### .toJson()
+### `.toJson()`
 Map to JSON using[json.encode]
 ```dart
     test('toJson', () {
@@ -139,7 +163,7 @@ Map to JSON using[json.encode]
     });
 ```
 
-### .toPretty()
+### `.toPretty()`
 Convert map to a String withIndent to increase readability. Thank me later 🕴️
 
 ```dart
@@ -182,7 +206,7 @@ Convert map to a String withIndent to increase readability. Thank me later 🕴�
 
 ## List Extensions
 
-### .toJson()
+### `.toJson()`
 Map to JSON using[json.encode]
 ```dart
     test('toJson', () {
@@ -196,7 +220,7 @@ Map to JSON using[json.encode]
 
 ## String Extensions
 
-### .toMap()
+### `.toMap()`
 JSON String to Map using[json.decode]
 
 ```dart
@@ -207,7 +231,7 @@ JSON String to Map using[json.decode]
     });
 ```
 
-### .toList()
+### `.toList()`
 JSON String to List using[json.decode]
 
 ```dart
@@ -218,7 +242,7 @@ JSON String to List using[json.decode]
     });
 ```
 
-### .isEmptyOrNull
+### `.isEmptyOrNull`
 Return a bool if the string is null or empty
 
 ```dart
@@ -230,7 +254,7 @@ Return a bool if the string is null or empty
     });
 ```
 
-### .isNotBlank
+### `.isNotBlank`
 Returns true if s is neither null, empty nor is solely made of whitespace characters.
 
 ```dart
@@ -242,7 +266,7 @@ Returns true if s is neither null, empty nor is solely made of whitespace charac
     });
 ```
 
-### .toINT && .toDOUBLE
+### `.toINT` && `.toDOUBLE`
 Parses the string as an int/double or 0.
 
 ```dart
@@ -258,7 +282,7 @@ Parses the string as an int/double or 0.
     });
 ```
 
-### .asBool
+### `.asBool`
 Convert this string into boolean.
 Returns `true` if this string is any of these
 values: `"true"`, `"yes"`, `"1"`,
@@ -283,7 +307,7 @@ if less than 1. This is also case insensitive.
     });
 ```
 
-### .toDateTime()
+### `.toDateTime()`
  Parse string to [DateTime] or [Null]
  
 ```dart
@@ -296,7 +320,7 @@ if less than 1. This is also case insensitive.
 
 ## double/int Extensions
 
-### .asBool
+### `.asBool`
 Convert this integer into boolean.
 Returns `true` if this integer is greater than *0*.
 
@@ -309,22 +333,22 @@ Returns `true` if this integer is greater than *0*.
     });
 ```
 
-### .tenth
+### `.tenth`
 Returns tenth of the number
 
-### .fourth
+### `.fourth`
 Returns fourth of the number
 
-### .half
+### `.third`
 Returns third of the number
 
-### .half
-Returns third of the number
+### `.half`
+Returns half of the number
 
-### .doubled
+### `.doubled`
 Returns doubled of the number
 
-### .tripled
+### `.tripled`
 Returns tripled of the number
 
 ## Widget Extensions & Spacers
@@ -367,11 +391,6 @@ OR
 
 ```
 
-## Sizes - Responsive App in Flutter
-
-![Demo](https://miro.medium.com/max/2160/1*zNcRtlhzm9407KJWtAFnFw.png)
-
-Read [this](https://medium.com/nonstopio/let-make-responsive-app-in-flutter-e48428795476) story for detailed explanation.
 
 ## Contributing
 

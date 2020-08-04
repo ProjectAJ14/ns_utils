@@ -21,6 +21,13 @@ extension ContextExtensions on BuildContext {
   ///
   double get height => sizeX.height;
 
+  /// Requests the primary focus for this node, or for a supplied [node], which
+  /// will also give focus to its [ancestors].
+  ///
+  setFocus({FocusNode focusNode}) {
+    FocusScope.of(this).requestFocus(focusNode ?? FocusNode());
+  }
+
   /// Push the given route onto the navigator.
   ///
   Future<T> push<T>(
