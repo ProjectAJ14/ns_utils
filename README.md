@@ -1,6 +1,6 @@
 # ns_utils
 
-🦾 tySet of methods/extensions for flutter that makes using framework in a much easier and clean way also adds additional functionality.
+🦾 Set of methods/extensions for flutter that makes using framework in a much easier and clean way also adds additional functionality.
 
 ## Let get started
 
@@ -22,17 +22,28 @@ import 'package:ns_utils/src.dart';
 ```
 
 ## What's in the box
+
 ⚫ `BuildContext` extensions 🦾
+
 ⚫ `DateTime` extensions 🦾
+
 ⚫ `Map` extensions 🦾
+
 ⚫ `String` extensions 🦾
+
 ⚫ `double` extensions 🦾
+
 ⚫ `int` extensions 🦾
+
 ⚫ `List` extensions 🦾
+
 ⚫ `conversion` methods 🦾
+
 ⚫ `Widget` extensions 🦾
+
 ⚫ `Spacers` spacers widgets 🦾
-⚫ `Sizes` (responsive app)[https://medium.com/nonstopio/let-make-responsive-app-in-flutter-e48428795476] 🦾
+
+⚫ `Sizes` responsive app 🦾
 
 ## BuildContext Extensions
 
@@ -358,16 +369,13 @@ OR
 
 ## Sizes - Responsive App in Flutter
 
-[Demo](https://miro.medium.com/max/2160/1*zNcRtlhzm9407KJWtAFnFw.png)
+![Demo](https://miro.medium.com/max/2160/1*zNcRtlhzm9407KJWtAFnFw.png)
 
 Read [this](https://medium.com/nonstopio/let-make-responsive-app-in-flutter-e48428795476) story for detailed explanation.
 
 ## Contributing
 
-If you have read up till here, then 🎉🎉🎉. There are couple of ways in which you can contribute to
-the growing community of `ns_utils.dart`.
-
-
+There are couple of ways in which you can contribute.
 - Propose any feature, enhancement
 - Report a bug
 - Fix a bug
