@@ -5,7 +5,7 @@ import 'package:ns_utils/constants.dart';
 import 'package:ns_utils/methods/conversion.dart';
 
 extension StringExtensions on String {
-  ///JSON String to Map  using[json.decode]
+  ///JSON String to Map using[json.decode]
   ///
   Map toMap() {
     Map data = Map();
@@ -18,12 +18,14 @@ extension StringExtensions on String {
     return data;
   }
 
+  ///JSON String to List using[json.decode]
+  ///
   List toList() {
     List data = List();
     try {
       data = json.decode(this ?? "[]");
     } catch (e, s) {
-      debugPrint("ERROR in getListFromJson $e \n $s");
+      debugPrint("ERROR in toList $e \n $s");
     }
     return data;
   }
@@ -40,13 +42,17 @@ extension StringExtensions on String {
   ///
   int get toINT => toInt(this);
 
-  /// Parses the string as an int or 0.0 [defaultDouble].
+  /// Parses the string as an int or 0 [defaultDouble].
   ///
   double get toDOUBLE => toDouble(this);
 
   /// Convert this string into boolean.
   ///
-  /// Returns `true` if this string is any of these values: `"true"`, `"yes"`, `"1"`, or if the string is a number and greater than 0, `false` if less than 1. This is also case insensitive.
+  /// Returns `true` if this string is any of these
+  /// values: `"true"`, `"yes"`, `"1"`,
+  /// or if the string is a number and greater than 0, `false`
+  /// if less than 1. This is also case insensitive.
+  ///
   bool get asBool {
     var s = this.trim().toLowerCase();
     num n;

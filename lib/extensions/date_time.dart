@@ -29,6 +29,6 @@ extension DateExtensions on DateTime {
   /// next day
   DateTime tomorrow() => DateTime(year, month, day + 1);
 
-  /// last day
+  /// previous day
   DateTime yesterday() => DateTime(year, month, day - 1);
 }

@@ -1,6 +1,7 @@
 name: ns_utils
 description: Set of methods/extentions for flutter that makes using framework in a much easier and clean way also adds additional functionality.
 version: 0.0.1
+documentation: https://github.com/ajaynonstopio/ns_utils
 homepage: https://github.com/ajaynonstopio/ns_utils
 
 environment:
@@ -8,6 +9,8 @@ environment:
 
 dependencies:
   intl: ^0.16.1
+  flutter_screenutil: ^2.3.1
+
   flutter:
     sdk: flutter
 

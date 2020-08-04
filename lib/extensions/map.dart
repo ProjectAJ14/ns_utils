@@ -6,7 +6,7 @@ import 'package:ns_utils/methods/conversion.dart';
 
 /// extension methods for Map
 ///
-extension MapExtenstions on Map {
+extension MapExtensions on Map {
   /// Reads a [key] value of [bool] type from [Map].
   ///
   /// If value is NULL or not [bool] type return default value [defaultBool]
@@ -104,9 +104,9 @@ extension MapExtenstions on Map {
   ///Map to JSON using[json.encode]
   ///
   String toJson() {
-    String data = "";
+    String data = "{}";
     try {
-      data = json.encode(this);
+      data = json.encode(this ?? defaultMap);
     } catch (e, s) {
       debugPrint("Error in toJson\n\n *$this* \n\n $e\n\n$s");
     }

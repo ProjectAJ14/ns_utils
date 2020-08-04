@@ -22,4 +22,9 @@ extension doubleExtensions on double {
   /// Return this number time three
   ///
   double get tripled => this * 3;
+
+  /// Convert this integer into boolean.
+  ///
+  /// Returns `true` if this integer is greater than *0*.
+  bool get asBool => this > 0;
 }

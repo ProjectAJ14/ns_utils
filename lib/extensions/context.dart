@@ -1,4 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:ns_utils/page_route/tansparent_route.dart';
 
 extension ContextExtensions on BuildContext {
   // Returns the MediaQuery
@@ -18,37 +20,117 @@ extension ContextExtensions on BuildContext {
   /// Returns same as MediaQuery.of(context).height
   ///
   double get height => sizeX.height;
-}
 
-extension ContextRouteExtensions on BuildContext {
-  /// Used navigate to a new screen.
+  /// Push the given route onto the navigator.
   ///
-  Future<T> push<T>(Widget screen) {
-    return Navigator.of(this)
-        .push<T>(MaterialPageRoute(builder: (_) => screen));
+  Future<T> push<T>(
+    Widget screen, {
+    bool transparent = false,
+    bool isCupertino = false,
+  }) {
+    RouteSettings settings = RouteSettings(
+      name: screen.toString(),
+    );
+    if (transparent) {
+      return Navigator.of(this).push<T>(TransparentRoute(
+        builder: (_) => screen,
+        settings: settings,
+      ));
+    } else {
+      if (isCupertino)
+        return Navigator.of(this).push<T>(CupertinoPageRoute(
+          builder: (_) => screen,
+          settings: settings,
+        ));
+      return Navigator.of(this).push<T>(MaterialPageRoute(
+        builder: (_) => screen,
+        settings: settings,
+      ));
+    }
   }
 
-  /// Used to go back to previous screen.
+  /// Replace the current route of the navigator by pushing the given route and
+  /// then disposing the previous route.
+  ///
+  Future<Null> replace(
+    Widget screen, {
+    bool transparent = false,
+    bool isCupertino = false,
+  }) {
+    RouteSettings settings = RouteSettings(
+      name: screen.toString(),
+    );
+    if (transparent) {
+      return Navigator.of(this).pushReplacement(TransparentRoute(
+        builder: (_) => screen,
+        settings: settings,
+      ));
+    } else {
+      if (isCupertino)
+        return Navigator.of(this).pushReplacement(CupertinoPageRoute(
+          builder: (_) => screen,
+          settings: settings,
+        ));
+      return Navigator.of(this).pushReplacement(MaterialPageRoute(
+        builder: (_) => screen,
+        settings: settings,
+      ));
+    }
+  }
+
+  /// Replace the all route of the navigator by pushing the given route and
+  /// then disposing all the previous route.
+  ///
+  void makeFirst(
+    Widget screen, {
+    bool transparent = false,
+    bool isCupertino = false,
+  }) {
+    popToFirst(this);
+    replace(
+      screen,
+      transparent: transparent,
+      isCupertino: isCupertino,
+    );
+  }
+
+  /// Replace the all route of the navigator by pushing the given route and
+  /// then disposing all the previous route.
+  ///
+  void pushAfterFirst(
+    Widget screen, {
+    bool transparent = false,
+    bool isCupertino = false,
+  }) {
+    popToFirst(this);
+    push(
+      screen,
+      transparent: transparent,
+      isCupertino: isCupertino,
+    );
+  }
+
+  /// Pop the top-most route off the navigator.
   ///
   void pop<T>({T data}) {
     try {
       Navigator.of(this).pop(data);
     } catch (e, s) {
-      debugPrint('POP FAILED $e\n$s');
+      debugPrint('pop failed $e\n$s');
     }
   }
 
-  /// Used to replace the current screen.
+  /// Pops the top-most route off the navigator till the first route.
   ///
-  Future<Null> replace(Widget screen) {
-    return Navigator.of(this)
-        .pushReplacement(MaterialPageRoute(builder: (context) => screen));
+  void popToFirst(BuildContext context) {
+    Navigator.of(context).popUntil((predicate) => predicate.isFirst);
   }
 
-  /// Used to make parameter screen as root screen.
+  /// Consults the current route's [Route.willPop] method, and acts accordingly,
+  /// potentially popping the route as a result; returns whether the pop request
+  /// should be considered handled.
   ///
-  void makeFirst(Widget screen) {
-    Navigator.popUntil(this, (predicate) => predicate.isFirst);
-    replace(screen);
+  void maybePop(BuildContext context) {
+    Navigator.of(context).maybePop();
   }
 }

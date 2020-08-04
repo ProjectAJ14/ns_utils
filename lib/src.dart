@@ -11,3 +11,5 @@ export 'extensions/string.dart';
 export 'extensions/widgets/gesture_detector.dart';
 export 'extensions/widgets/widgets.dart';
 export 'methods/conversion.dart';
+export 'utils/sizes.dart';
+export 'widgets/spacers.dart';
