@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:ns_utils/src.dart';
+import 'package:ns_utils/utils/logs.dart';
 
 double defaultScreenWidth = 400;
 double defaultScreenHeight = 810;
@@ -101,7 +102,7 @@ class Sizes {
   ///
   static void initScreenAwareSizes(BuildContext context) {
     if (initialized) {
-      debugPrint('Sizes already initialized');
+      nsuLogs('Sizes already initialized');
       printScreenInformation();
       return;
     }
@@ -140,7 +141,7 @@ class Sizes {
   }
 
   static void printScreenInformation() {
-    debugPrint('''
+    nsuLogs('''
     Device Screen Details
     screenWidth: $screenWidth
     screenHeight: $screenHeight
@@ -241,7 +242,7 @@ class FontSizes {
   ///
   static initScreenAwareFontSize() {
     if (initialized) {
-      debugPrint('FontSize already initialized');
+      nsuLogs('FontSize already initialized');
       return;
     }
     initialized = true;

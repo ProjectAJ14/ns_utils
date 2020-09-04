@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:ns_utils/constants.dart';
 import 'package:ns_utils/methods/conversion.dart';
+import 'package:ns_utils/utils/logs.dart';
 
 /// extension methods for Map
 ///
@@ -18,7 +19,7 @@ extension MapExtensions on Map {
     }
     if (data.containsKey(key)) if (data[key] is bool)
       return this[key] ?? defaultValue;
-    debugPrint("Map.getBool[$key] has incorrect data : ${data[key]}");
+    nsuLogs("Map.getBool[$key] has incorrect data : ${data[key]}");
     return defaultValue;
   }
 
@@ -32,7 +33,7 @@ extension MapExtensions on Map {
       data = defaultMap;
     }
     if (data.containsKey(key)) return toInt(data[key]);
-    debugPrint("Map.getInt[$key] has incorrect data : ${data[key]}");
+    nsuLogs("Map.getInt[$key] has incorrect data : ${data[key]}");
     return defaultValue;
   }
 
@@ -46,7 +47,7 @@ extension MapExtensions on Map {
       data = defaultMap;
     }
     if (data.containsKey(key)) return toDouble(data[key]);
-    debugPrint("Map.getDouble[$key] has incorrect data : ${data[key]}");
+    nsuLogs("Map.getDouble[$key] has incorrect data : ${data[key]}");
     return defaultValue;
   }
 
@@ -59,9 +60,11 @@ extension MapExtensions on Map {
     if (data == null) {
       data = defaultMap;
     }
-    if (data.containsKey(key)) if (data[key] is String)
-      return data[key] ?? defaultValue;
-    debugPrint("Map.getString[$key] has incorrect data : ${data[key]}");
+    if (data.containsKey(key)) {
+      if (data[key] == defaultString) return defaultValue;
+      return '${data[key]}' ?? defaultValue;
+    }
+    nsuLogs("Map.getString[$key] has incorrect data : ${data[key]}");
     return defaultValue;
   }
 
@@ -76,7 +79,7 @@ extension MapExtensions on Map {
     }
     if (data.containsKey(key)) if (data[key] is List)
       return data[key] ?? defaultList;
-    debugPrint("Map.getString[$key] has incorrect data :  ${data[key]}");
+    nsuLogs("Map.getString[$key] has incorrect data :  ${data[key]}");
 
     return defaultList;
   }
@@ -92,7 +95,7 @@ extension MapExtensions on Map {
     }
     if (data.containsKey(key)) if (data[key] is Map)
       return data[key] ?? defaultMap;
-    debugPrint("Map.getMap[$key] has incorrect data :  ${data[key]}");
+    nsuLogs("Map.getMap[$key] has incorrect data :  ${data[key]}");
     return defaultMap;
   }
 
@@ -108,7 +111,7 @@ extension MapExtensions on Map {
     try {
       data = json.encode(this ?? defaultMap);
     } catch (e, s) {
-      debugPrint("Error in toJson\n\n *$this* \n\n $e\n\n$s");
+      nsuLogs("Error in toJson\n\n *$this* \n\n $e\n\n$s");
     }
     return data;
   }
@@ -118,11 +121,20 @@ extension MapExtensions on Map {
   String toPretty() {
     String data = defaultString;
     try {
-      JsonEncoder encoder = new JsonEncoder.withIndent('  ');
+      JsonEncoder encoder = new JsonEncoder.withIndent('  ', toEncodable);
       data = encoder.convert(this);
     } catch (e, s) {
-      debugPrint("Error in toPretty\n\n *$this* \n\n $e\n\n$s");
+      nsuLogs("Error in toPretty\n\n *$this* \n\n $e\n\n$s");
     }
     return data;
   }
+}
+
+toEncodable(object) {
+  if (object is String ||
+      object is num ||
+      object is Map ||
+      object is List ||
+      object is bool) return object;
+  return '$object';
 }

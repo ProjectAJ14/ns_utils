@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
 import 'package:ns_utils/constants.dart';
+import 'package:ns_utils/utils/logs.dart';
 
 ///Parse to int or returns [defaultValue]
 ///
@@ -9,7 +9,7 @@ int toInt(Object value, {int defaultValue = defaultInt}) {
     try {
       number = toDouble(value).toInt();
     } on Exception catch (e, s) {
-      debugPrint("toInt Exception : $e\n$s");
+      nsuLogs("toInt Exception : $e\n$s");
     }
   }
   return number;
@@ -23,7 +23,7 @@ double toDouble(Object value, {double defaultValue = defaultDouble}) {
     try {
       number = double.parse('$value') ?? defaultDouble;
     } on Exception catch (e, s) {
-      debugPrint("toDouble Exception : $e\n$s");
+      nsuLogs("toDouble Exception : $e\n$s");
     }
   }
   return number;

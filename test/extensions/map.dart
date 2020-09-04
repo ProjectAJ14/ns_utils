@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:ns_utils/src.dart';
 
@@ -120,10 +119,10 @@ main() {
         "favoriteFruit": "banana"
       };
 
-      debugPrint('Not Pretty\n');
-      debugPrint('$data');
-      debugPrint('\n\nPretty🌼');
-      debugPrint(data.toPretty());
+      print('Not Pretty\n');
+      print('$data');
+      print('\n\nPretty🌼');
+      print(data.toPretty());
     });
   });
 }

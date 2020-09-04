@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:ns_utils/page_route/tansparent_route.dart';
+import 'package:ns_utils/utils/logs.dart';
 
 extension ContextExtensions on BuildContext {
   // Returns the MediaQuery
@@ -123,7 +124,7 @@ extension ContextExtensions on BuildContext {
     try {
       Navigator.of(this).pop(data);
     } catch (e, s) {
-      debugPrint('pop failed $e\n$s');
+      nsuLogs('pop failed $e\n$s');
     }
   }
 

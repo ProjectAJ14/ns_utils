@@ -1,7 +1,7 @@
 import 'dart:convert';
 
-import 'package:flutter/material.dart';
 import 'package:ns_utils/constants.dart';
+import 'package:ns_utils/utils/logs.dart';
 
 /// extension methods for List
 ///
@@ -13,7 +13,7 @@ extension ListExtensions on List {
     try {
       data = json.encode(this ?? defaultList);
     } catch (e, s) {
-      debugPrint("ERROR in getJson $e \n $s");
+      nsuLogs("ERROR in getJson $e \n $s");
     }
     return data;
   }

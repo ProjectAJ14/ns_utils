@@ -12,6 +12,7 @@ dependencies:
   #<editor-fold desc="UTILS">
   intl: ^0.16.1
   flutter_screenutil: ^2.3.1
+  crossplat_objectid: ^2.1.4
   #</editor-fold>
 
   #<editor-fold desc="LOCAL-DATABASE">

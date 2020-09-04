@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ns_utils/utils/logs.dart';
 
 const Pattern namePattern = r"^[a-zA-Z. ']+$";
 
@@ -24,13 +25,13 @@ class ValidatorUtil {
       if (form.validate()) {
         form.save();
 
-        debugPrint('$_formKey isFormValid:true');
+        nsuLogs('$_formKey isFormValid:true');
 
         return true;
       }
-      debugPrint('$_formKey isFormValid:false');
+      nsuLogs('$_formKey isFormValid:false');
     } catch (e, s) {
-      debugPrint('$_formKey isFormValid $e\n$s');
+      nsuLogs('$_formKey isFormValid $e\n$s');
     }
     return false;
   }
@@ -39,7 +40,7 @@ class ValidatorUtil {
     String value, {
     String invalidMessage,
   }) {
-    debugPrint("validateEmail : $value ");
+    nsuLogs("validateEmail : $value ");
 
     if (value.isEmpty) return enterEmail;
 
@@ -49,7 +50,7 @@ class ValidatorUtil {
   }
 
   static String validatePassword(String value) {
-    debugPrint("validatePassword : $value ");
+    nsuLogs("validatePassword : $value ");
 
     if (value.isEmpty) return enterPassword;
 
@@ -59,7 +60,7 @@ class ValidatorUtil {
   }
 
   static String validateName(String value, String label) {
-    debugPrint("validateName : $value ");
+    nsuLogs("validateName : $value ");
 
     if (value.isEmpty) return enter + label;
 
@@ -88,7 +89,7 @@ class ValidatorUtil {
 
     bool result = regex.hasMatch(value);
 
-    debugPrint('hasMatch $pattern $value => $result');
+    nsuLogs('hasMatch $pattern $value => $result');
 
     return result;
   }

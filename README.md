@@ -197,10 +197,10 @@ Convert map to a String withIndent to increase readability. Thank me later 🕴�
         "favoriteFruit": "banana"
       };
 
-      debugPrint('Not Pretty\n');
-      debugPrint('$data');
-      debugPrint('\n\nPretty🌼');
-      debugPrint(data.toPretty());
+      nsuLogs('Not Pretty\n');
+      nsuLogs('$data');
+      nsuLogs('\n\nPretty🌼');
+      nsuLogs(data.toPretty());
 ```
 ![Output](assets/toPretty.png)
 

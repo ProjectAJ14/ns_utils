@@ -1,8 +1,8 @@
 import 'dart:convert';
 
-import 'package:flutter/cupertino.dart';
 import 'package:ns_utils/constants.dart';
 import 'package:ns_utils/methods/conversion.dart';
+import 'package:ns_utils/utils/logs.dart';
 
 extension StringExtensions on String {
   ///JSON String to Map using[json.decode]
@@ -13,7 +13,7 @@ extension StringExtensions on String {
       if (this == null || this == "") return data;
       data = json.decode(this);
     } catch (e, s) {
-      debugPrint("Error in toMap\n\n *$this* \n\n $e\n\n$s");
+      nsuLogs("Error in toMap\n\n *$this* \n\n $e\n\n$s");
     }
     return data;
   }
@@ -25,7 +25,7 @@ extension StringExtensions on String {
     try {
       data = json.decode(this ?? "[]");
     } catch (e, s) {
-      debugPrint("ERROR in toList $e \n $s");
+      nsuLogs("ERROR in toList $e \n $s");
     }
     return data;
   }
@@ -70,17 +70,17 @@ extension StringExtensions on String {
     String value = this;
     DateTime tempDateTime;
     if (value.isEmptyOrNull) {
-      debugPrint('toDateTime invalid $value context:$context');
+      nsuLogs('toDateTime invalid $value context:$context');
       return tempDateTime;
     }
     if (value.startsWith('-00')) {
-      debugPrint('toDateTime invalid $value context:$context');
+      nsuLogs('toDateTime invalid $value context:$context');
       value = value.replaceFirst('-00', '');
     }
     try {
       tempDateTime = DateTime.parse(value);
     } catch (e, s) {
-      debugPrint("toDateTime $context  $value : $e\n$s");
+      nsuLogs("toDateTime $context  $value : $e\n$s");
     }
     return tempDateTime;
   }
