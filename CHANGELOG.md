@@ -22,4 +22,9 @@
 - Updated README.md
 
 
+## [0.0.4] 
+- Added SharedPreferences Service
+- Added DeviceService
+- Added NSUtils.init
+
 
