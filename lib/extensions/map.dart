@@ -61,8 +61,9 @@ extension MapExtensions on Map {
       data = defaultMap;
     }
     if (data.containsKey(key)) {
-      if (data[key] == defaultString) return defaultValue;
-      return '${data[key]}' ?? defaultValue;
+      var value = data[key];
+      if (value == null) return defaultValue;
+      return '$value';
     }
     nsuLogs("Map.getString[$key] has incorrect data : ${data[key]}");
     return defaultValue;

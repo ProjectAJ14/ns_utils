@@ -1,3 +1,9 @@
+## [0.0.5] 
+- Added SharedPreferences Service
+- Added DeviceService
+- Added NSUtils.init
+
+
 ## [0.0.1] - initial release.
 - `BuildContext` extensions 🦾
 - `DateTime` extensions 🦾
@@ -20,11 +26,5 @@
 
 ## [0.0.3] 
 - Updated README.md
-
-
-## [0.0.4] 
-- Added SharedPreferences Service
-- Added DeviceService
-- Added NSUtils.init
 
 

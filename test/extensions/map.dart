@@ -43,8 +43,9 @@ main() {
       expect(data.getDouble('key'), 0);
     });
     test('getString', () {
-      Map data;
+      Map data = {'id': null};
       expect(data.getString('key'), '');
+      expect(data.getString('id'), '');
       expect(data.getString('key', defaultValue: 'NA'), 'NA');
       data = {
         'key': 'Ajay',
