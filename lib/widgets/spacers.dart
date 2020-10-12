@@ -184,6 +184,21 @@ class C20 extends StatelessWidget {
   }
 }
 
+class C40 extends StatelessWidget {
+  final Color color;
+
+  const C40({Key key, this.color}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      color: color ?? Colors.transparent,
+      height: Sizes.s40,
+      width: Sizes.s40,
+    );
+  }
+}
+
 class C30 extends StatelessWidget {
   final Color color;
 
@@ -210,6 +225,21 @@ class C50 extends StatelessWidget {
       color: color ?? Colors.transparent,
       height: Sizes.s50,
       width: Sizes.s50,
+    );
+  }
+}
+
+class C100 extends StatelessWidget {
+  final Color color;
+
+  const C100({Key key, this.color}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      color: color ?? Colors.transparent,
+      height: Sizes.s100,
+      width: Sizes.s100,
     );
   }
 }

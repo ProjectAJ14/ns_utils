@@ -12,11 +12,18 @@ dependencies:
   #<editor-fold desc="UTILS">
   intl: ^0.16.1
   flutter_screenutil: ^2.3.1
-  crossplat_objectid: ^2.1.4
+  recase: ^3.0.0
   #</editor-fold>
 
   #<editor-fold desc="LOCAL-DATABASE">
   shared_preferences: ^0.5.7+1
+  crossplat_objectid: ^2.1.4
+  #</editor-fold>
+
+  #<editor-fold desc="DEVICE APIS">
+  device_info: ^0.4.2+4
+  package_info: ^0.4.1
+  flutter_statusbarcolor: ^0.2.3
   #</editor-fold>
 
   flutter:
