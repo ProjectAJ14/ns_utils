@@ -94,7 +94,7 @@ extension ContextExtensions on BuildContext {
     bool transparent = false,
     bool isCupertino = false,
   }) {
-    popToFirst(this);
+    this.popToFirst();
     replace(
       screen,
       transparent: transparent,
@@ -110,7 +110,7 @@ extension ContextExtensions on BuildContext {
     bool transparent = false,
     bool isCupertino = false,
   }) {
-    popToFirst(this);
+    this.popToFirst();
     push(
       screen,
       transparent: transparent,
@@ -130,15 +130,15 @@ extension ContextExtensions on BuildContext {
 
   /// Pops the top-most route off the navigator till the first route.
   ///
-  void popToFirst(BuildContext context) {
-    Navigator.of(context).popUntil((predicate) => predicate.isFirst);
+  void popToFirst() {
+    Navigator.of(this).popUntil((predicate) => predicate.isFirst);
   }
 
   /// Consults the current route's [Route.willPop] method, and acts accordingly,
   /// potentially popping the route as a result; returns whether the pop request
   /// should be considered handled.
   ///
-  void maybePop(BuildContext context) {
-    Navigator.of(context).maybePop();
+  void maybePop() {
+    Navigator.of(this).maybePop();
   }
 }

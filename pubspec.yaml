@@ -5,25 +5,32 @@ documentation: https://github.com/ajaynonstopio/ns_utils
 homepage: https://github.com/ajaynonstopio/ns_utils
 
 environment:
-  sdk: ">=2.7.0 <3.0.0"
+  sdk: ">=2.10.4 <3.0.0"
 
 dependencies:
 
+  #<editor-fold desc="UI">
+  flutter_spinkit: 4.1.2+1
+  #</editor-fold>
+
   #<editor-fold desc="UTILS">
-  intl: ^0.16.1
-  flutter_screenutil: ^2.3.1
-  recase: ^3.0.0
+  intl: 0.16.1
+  flutter_screenutil: 2.3.1
+  recase: 3.0.0
+  after_layout: 1.0.7+2
+  logger: 0.9.4
+  cached_network_image: 2.4.1
   #</editor-fold>
 
   #<editor-fold desc="LOCAL-DATABASE">
-  shared_preferences: ^0.5.7+1
-  crossplat_objectid: ^2.1.4
+  shared_preferences: 0.5.12+4
+  crossplat_objectid: 2.1.4
   #</editor-fold>
 
   #<editor-fold desc="DEVICE APIS">
-  device_info: ^0.4.2+4
-  package_info: ^0.4.1
-  flutter_statusbarcolor: ^0.2.3
+  device_info: 1.0.0
+  package_info: 0.4.3+4
+  flutter_statusbarcolor: 0.2.3
   #</editor-fold>
 
   flutter:

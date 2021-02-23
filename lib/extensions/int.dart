@@ -25,6 +25,14 @@ extension IntExtensions on int {
   /// Returns `true` if this integer is greater than *0*.
   bool get asBool => this > 0;
 
+  /// returns null if 0
+  ///
+  int get asNullIfZero => this == 0 ? null : this;
+
+  /// Returns true if this is null or 0
+  ///
+  bool get isNullOrZero => asNullIfZero == null;
+
   /// Returns tenth of the number
   ///
   double get tenth => this / 10;
