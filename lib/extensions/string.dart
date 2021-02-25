@@ -1,5 +1,7 @@
 import 'dart:convert';
+import 'dart:math' as math;
 
+import 'package:flutter/material.dart';
 import 'package:ns_utils/constants.dart';
 import 'package:ns_utils/methods/conversion.dart';
 import 'package:ns_utils/utils/logs.dart';
@@ -46,6 +48,18 @@ extension StringExtensions on String {
   ///
   double get toDOUBLE => toDouble(this);
 
+  /// Return a null if the string is null or empty
+  ///
+  String get asNullIfEmpty => isEmptyOrNull ? null : this;
+
+  /// Return a empty if the string is null or empty
+  ///
+  String get asEmptyIfEmptyOrNull => isEmptyOrNull ? '' : this;
+
+  /// If string is not blank[isNotBlank] append the string with a ', '
+  ///
+  String get addSpaceAndCommaIfNotEmpty => isNotBlank ? '$this, ' : '';
+
   /// Convert this string into boolean.
   ///
   /// Returns `true` if this string is any of these
@@ -83,5 +97,26 @@ extension StringExtensions on String {
       nsuLogs("toDateTime $context  $value : $e\n$s");
     }
     return tempDateTime;
+  }
+
+  /// Parse string to [Color]
+  ///
+  toColor() {
+    Color color =
+        Color((math.Random().nextDouble() * 0xFFFFFF).toInt()).withOpacity(1.0);
+    try {
+      var hexColor = this.replaceAll("#", "");
+      if (hexColor.length == 6) {
+        hexColor = "0xFF" + hexColor;
+      }
+      if (hexColor.length == 10) {
+        color = Color(int.parse(hexColor));
+      }
+    } catch (e) {
+      nsuLogs(
+        'toColor $e',
+      );
+    }
+    return color;
   }
 }

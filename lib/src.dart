@@ -18,10 +18,7 @@ export 'utils/sizes.dart';
 export 'widgets/spacers.dart';
 
 class NSUtils {
-  bool _isInitialized = false;
   bool _printLogs = false;
-
-  bool get isInitialized => _isInitialized;
 
   bool get printLogs => _printLogs;
 
@@ -30,7 +27,6 @@ class NSUtils {
   Future<Null> init({
     @required bool printLogs,
   }) async {
-    _isInitialized = true;
     _printLogs = printLogs;
     await SPService.init();
   }

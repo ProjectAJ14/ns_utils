@@ -1,8 +1,23 @@
-## [0.0.5] 
+## [0.0.6]
+- Updated dependencies
+- Added more extensions
+
+## [0.0.5]
 - Added SharedPreferences Service
 - Added DeviceService
 - Added NSUtils.init
 
+## [0.0.3]
+- Updated README.md
+
+## [0.0.3]
+- Updated README.md
+
+## [0.0.2] - Custom error widget.
+- Added CustomErrorWidget
+- Updated README.md
+- Added ValidatorUtil
+- Added setFocus in ContextExtensions
 
 ## [0.0.1] - initial release.
 - `BuildContext` extensions 🦾
@@ -17,14 +32,9 @@
 - `Spacers` spacers widgets 🦾
 - `Sizes` responsive app 🦾
 
-## [0.0.2] - Custom error widget.
-- Added CustomErrorWidget
-- Updated README.md
-- Added ValidatorUtil
-- Added setFocus in ContextExtensions
 
 
-## [0.0.3] 
-- Updated README.md
+
+
 
 
