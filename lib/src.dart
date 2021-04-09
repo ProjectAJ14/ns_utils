@@ -1,12 +1,16 @@
 library ns_utils;
 
+// Flutter imports:
 import 'package:flutter/material.dart';
-import 'package:ns_utils/services/shared_preferences/sp_service.dart';
+
+// Project imports:
+import 'services/shared_preferences/sp_service.dart';
 
 export 'data_type/stackx.dart';
 export 'extensions/context.dart';
 export 'extensions/date_time.dart';
 export 'extensions/double.dart';
+export 'extensions/functions.dart';
 export 'extensions/int.dart';
 export 'extensions/list.dart';
 export 'extensions/map.dart';

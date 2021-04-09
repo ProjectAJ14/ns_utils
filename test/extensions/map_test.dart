@@ -1,7 +1,10 @@
+// Package imports:
 import 'package:flutter_test/flutter_test.dart';
+
+// Project imports:
 import 'package:ns_utils/src.dart';
 
-main() {
+void main() {
   group('MapExtensions', () {
     test('getBool', () {
       Map data;
@@ -43,6 +46,7 @@ main() {
       expect(data.getDouble('key'), 0);
     });
     test('getString', () {
+      // ignore: omit_local_variable_types
       Map data = {'id': null};
       expect(data.getString('key'), '');
       expect(data.getString('id'), '');
@@ -52,7 +56,7 @@ main() {
       };
       expect(data.getString('key'), 'Ajay');
       data = {
-        'key1': 'Kumar',
+        'key1': "Kumar",
       };
       expect(data.getString('key'), '');
     });
@@ -90,7 +94,7 @@ main() {
     });
 
     test('toPretty', () {
-      Map data = {
+      var data = {
         "_id": "5f294631410e4b3d1ae472c8",
         "index": 0,
         "guid": "e79b7dc5-9db2-40fb-acc4-2063aaf4fdcf",
@@ -105,6 +109,7 @@ main() {
         "phone": "+1 (985) 469-2418",
         "address": "181 Tilden Avenue, Hamilton, Idaho, 2062",
         "about":
+            // ignore: lines_longer_than_80_chars
             "Fugiat consectetur exercitation ex eiusmod officia ex exercitation et est enim cillum consectetur deserunt fugiat. Ex aliqua cupidatat consectetur reprehenderit. Voluptate nisi ipsum magna aliqua deserunt consectetur dolor occaecat fugiat labore. Sit Lorem elit duis deserunt ipsum adipisicing amet. Ullamco esse commodo et laborum minim. Sunt et exercitation veniam magna aute.",
         "registered": "Thursday, November 2, 2017 10:07 PM",
         "latitude": "-36.620306",
@@ -124,6 +129,14 @@ main() {
       print('$data');
       print('\n\nPretty🌼');
       print(data.toPretty());
+    });
+
+    test('nullProtected', () {
+      Map data = {
+        'key': 1,
+        'key2': null,
+      };
+      expect(data.nullProtected, {"key": 1});
     });
   });
 }

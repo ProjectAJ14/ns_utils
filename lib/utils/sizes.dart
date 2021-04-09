@@ -1,7 +1,12 @@
+// Flutter imports:
 import 'package:flutter/material.dart';
+
+// Package imports:
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:ns_utils/src.dart';
-import 'package:ns_utils/utils/logs.dart';
+
+// Project imports:
+import '../src.dart';
+import 'logs.dart';
 
 double defaultScreenWidth = 400;
 double defaultScreenHeight = 810;
@@ -10,6 +15,7 @@ double screenHeight = defaultScreenHeight;
 
 ///Adapting screen and font size.
 ///Let your UI display a reasonable layout on different screen sizes!
+///
 class Sizes {
   static bool initialized = false;
 
@@ -173,6 +179,8 @@ class Sizes {
     The ratio of  height width to the size of the design: ${ScreenUtil().scaleHeight * ScreenUtil.pixelRatio}
     ''');
   }
+
+  double get s1000 => Sizes.getSize(1000);
 }
 
 class FontSizes {
@@ -240,11 +248,13 @@ class FontSizes {
 
   ///initialize FontSize
   ///
-  static initScreenAwareFontSize() {
+  static void initScreenAwareFontSize() {
     if (initialized) {
       nsuLogs('FontSize already initialized');
       return;
     }
     initialized = true;
   }
+
+  double get s1000 => Sizes.getSize(1000);
 }

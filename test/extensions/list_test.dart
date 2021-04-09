@@ -1,7 +1,10 @@
+// Package imports:
 import 'package:flutter_test/flutter_test.dart';
+
+// Project imports:
 import 'package:ns_utils/src.dart';
 
-main() {
+void main() {
   group('ListExtensions', () {
     test('toJson', () {
       expect([12, 12].toJson(), '[12,12]');

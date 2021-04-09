@@ -1,16 +1,23 @@
+// Package imports:
 import 'package:flutter_test/flutter_test.dart';
+
+// Project imports:
 import 'package:ns_utils/src.dart';
 
-main() {
+void main() {
   group('StringExtensions', () {
     test('toMap', () {
       expect(''.toMap(), {});
+
       expect('{"id":1}'.toMap(), {"id": 1});
+
       expect('{"id":"123"}'.toMap(), {"id": "123"});
     });
     test('toList', () {
       expect(''.toList(), []);
+
       expect('[1,2,3]'.toList(), [1, 2, 3]);
+
       expect('["1","2"]'.toList(), ["1", "2"]);
     });
     test('isEmptyOrNull', () {

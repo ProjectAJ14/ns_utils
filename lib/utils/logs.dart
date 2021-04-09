@@ -1,18 +1,19 @@
+// Project imports:
 import '../src.dart';
 
 class NSFLogTag {
-  static const String NSF = 'NSF';
+  static const String nsf = 'NSF';
 }
 
-nsuLogs(
+void nsuLogs(
   Object object, {
-  String tag = NSFLogTag.NSF,
+  String tag = NSFLogTag.nsf,
 }) =>
     logMessage('$object', tag);
 
 ///print logs even if the content more then log buffer size
 ///
-logMessage(String message, String tag) {
+void logMessage(String message, String tag) {
   if (!NSUtils.instance.printLogs) return;
   int maxLogSize = 1000;
   for (int i = 0; i <= message.length / maxLogSize; i++) {

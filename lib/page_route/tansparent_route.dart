@@ -1,3 +1,4 @@
+// Flutter imports:
 import 'package:flutter/cupertino.dart';
 
 /// A Custom PageRoute with transition from bottom to top
@@ -35,7 +36,7 @@ class TransparentRoute<T> extends PageRoute<T> {
   @override
   Widget buildPage(BuildContext context, Animation<double> animation,
       Animation<double> secondaryAnimation) {
-    final result = builder(context);
+    final Widget result = builder(context);
     return CupertinoFullscreenDialogTransition(
       primaryRouteAnimation: animation,
       secondaryRouteAnimation: secondaryAnimation,

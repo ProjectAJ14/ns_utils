@@ -1,4 +1,5 @@
-import 'package:ns_utils/constants.dart';
+// Project imports:
+import '../constants.dart';
 
 extension IntExtensions on int {
   /// If value is NULL or not in [covered cases] return default value [defaultString]

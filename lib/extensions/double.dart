@@ -1,4 +1,4 @@
-extension doubleExtensions on double {
+extension DoubleExtensions on double {
   /// Returns tenth of the number
   ///
   double get tenth => this / 10;

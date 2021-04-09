@@ -1,4 +1,9 @@
 # ns_utils
+[![](https://img.shields.io/badge/build-0.0.7-brightgreen)](repo_link)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+[![style: effective dart][badge]][badge_link]
+
+
 
 🦾 Set of methods/extensions for flutter that makes using framework in a much easier and clean way also adds additional functionality.
 
@@ -44,6 +49,8 @@ import 'package:ns_utils/src.dart';
 ⚫ `conversion` methods 🦾
 
 ⚫ `Widget` extensions 🦾
+
+⚫ `Function` extensions 🦾
 
 ⚫ `Spacers` spacers widgets 🦾
 
@@ -311,7 +318,7 @@ if less than 1. This is also case insensitive.
  Parse string to [DateTime] or [Null]
  
 ```dart
-    test('toDateTime', () {
+    test("toDateTime", () {
       expect('2020-08-01'.toDateTime(), DateTime(2020, 08, 01));
       String value = DateTime(2020, 08, 01).toIso8601String();
       expect(value.toDateTime(), DateTime(2020, 08, 01));
@@ -402,3 +409,8 @@ There are couple of ways in which you can contribute.
 - Write and improve some **documentation**. Documentation is super critical and its importance
   cannot be overstated!
 - Send in a Pull Request :-)
+
+
+[badge]: https://img.shields.io/badge/style-effective_dart-40c4ff.svg
+[badge_link]: https://pub.dev/packages/effective_dart
+[repo_link]: https://github.com/ajaynonstopio/ns_utils

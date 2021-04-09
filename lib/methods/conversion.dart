@@ -1,5 +1,6 @@
-import 'package:ns_utils/constants.dart';
-import 'package:ns_utils/utils/logs.dart';
+// Project imports:
+import '../constants.dart';
+import '../utils/logs.dart';
 
 ///Parse to int or returns [defaultValue]
 ///

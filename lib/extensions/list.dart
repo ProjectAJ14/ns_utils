@@ -1,10 +1,13 @@
+// Dart imports:
 import 'dart:convert';
 
-import 'package:ns_utils/constants.dart';
-import 'package:ns_utils/utils/logs.dart';
+// Project imports:
+import '../constants.dart';
+import '../utils/logs.dart' show nsuLogs;
 
 /// extension methods for List
 ///
+// ignore: always_specify_types
 extension ListExtensions on List {
   ///List to JSON using[json.encode]
   ///
@@ -12,7 +15,7 @@ extension ListExtensions on List {
     String data = defaultString;
     try {
       data = json.encode(this ?? defaultList);
-    } catch (e, s) {
+    } on Exception catch (e, s) {
       nsuLogs("ERROR in getJson $e \n $s");
     }
     return data;

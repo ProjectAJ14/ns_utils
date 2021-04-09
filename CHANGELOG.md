@@ -1,3 +1,10 @@
+## [0.0.7]
+- Added Function Extensions
+- Added more Map Extensions
+- Added import_sorter
+- Added analysis_options.yaml i.e to follow effective_dart
+- Updated README.md
+
 ## [0.0.6]
 - Updated dependencies
 - Added more extensions

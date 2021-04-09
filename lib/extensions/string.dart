@@ -1,20 +1,26 @@
+// Dart imports:
 import 'dart:convert';
 import 'dart:math' as math;
 
+// Flutter imports:
 import 'package:flutter/material.dart';
-import 'package:ns_utils/constants.dart';
-import 'package:ns_utils/methods/conversion.dart';
-import 'package:ns_utils/utils/logs.dart';
+
+// Project imports:
+import '../constants.dart';
+import '../methods/conversion.dart';
+import '../utils/logs.dart';
 
 extension StringExtensions on String {
   ///JSON String to Map using[json.decode]
   ///
+  // ignore: always_specify_types
   Map toMap() {
-    Map data = Map();
+    // ignore: always_specify_types
+    Map data = {};
     try {
       if (this == null || this == "") return data;
       data = json.decode(this);
-    } catch (e, s) {
+    } on Exception catch (e, s) {
       nsuLogs("Error in toMap\n\n *$this* \n\n $e\n\n$s");
     }
     return data;
@@ -22,11 +28,13 @@ extension StringExtensions on String {
 
   ///JSON String to List using[json.decode]
   ///
+  // ignore: always_specify_types
   List toList() {
-    List data = List();
+    // ignore: always_specify_types
+    List data = [];
     try {
       data = json.decode(this ?? "[]");
-    } catch (e, s) {
+    } on Exception catch (e, s) {
       nsuLogs("ERROR in toList $e \n $s");
     }
     return data;
@@ -68,12 +76,13 @@ extension StringExtensions on String {
   /// if less than 1. This is also case insensitive.
   ///
   bool get asBool {
-    var s = this.trim().toLowerCase();
+    String s = trim().toLowerCase();
     num n;
     try {
       n = num.parse(s);
-    } catch (e) {
+    } on Exception catch (e, s) {
       n = -1;
+      nsuLogs('asBool invalid e:$e s:$s');
     }
     return s == 'true' || s == 'yes' || n > 0;
   }
@@ -93,7 +102,7 @@ extension StringExtensions on String {
     }
     try {
       tempDateTime = DateTime.parse(value);
-    } catch (e, s) {
+    } on Exception catch (e, s) {
       nsuLogs("toDateTime $context  $value : $e\n$s");
     }
     return tempDateTime;
@@ -101,18 +110,18 @@ extension StringExtensions on String {
 
   /// Parse string to [Color]
   ///
-  toColor() {
+  Color toColor() {
     Color color =
         Color((math.Random().nextDouble() * 0xFFFFFF).toInt()).withOpacity(1.0);
     try {
-      var hexColor = this.replaceAll("#", "");
+      String hexColor = replaceAll("#", "");
       if (hexColor.length == 6) {
-        hexColor = "0xFF" + hexColor;
+        hexColor = "0xFF$hexColor";
       }
       if (hexColor.length == 10) {
         color = Color(int.parse(hexColor));
       }
-    } catch (e) {
+    } on Exception catch (e) {
       nsuLogs(
         'toColor $e',
       );

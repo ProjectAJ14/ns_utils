@@ -1,7 +1,10 @@
+// Flutter imports:
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:ns_utils/page_route/tansparent_route.dart';
-import 'package:ns_utils/utils/logs.dart';
+
+// Project imports:
+import '../page_route/tansparent_route.dart';
+import '../utils/logs.dart';
 
 extension ContextExtensions on BuildContext {
   // Returns the MediaQuery
@@ -25,7 +28,7 @@ extension ContextExtensions on BuildContext {
   /// Requests the primary focus for this node, or for a supplied [node], which
   /// will also give focus to its [ancestors].
   ///
-  setFocus({FocusNode focusNode}) {
+  void setFocus({FocusNode focusNode}) {
     FocusScope.of(this).requestFocus(focusNode ?? FocusNode());
   }
 
@@ -36,21 +39,22 @@ extension ContextExtensions on BuildContext {
     bool transparent = false,
     bool isCupertino = false,
   }) {
-    RouteSettings settings = RouteSettings(
+    final RouteSettings settings = RouteSettings(
       name: screen.toString(),
     );
     if (transparent) {
-      return Navigator.of(this).push<T>(TransparentRoute(
+      return Navigator.of(this).push<T>(TransparentRoute<T>(
         builder: (_) => screen,
         settings: settings,
       ));
     } else {
-      if (isCupertino)
-        return Navigator.of(this).push<T>(CupertinoPageRoute(
+      if (isCupertino) {
+        return Navigator.of(this).push<T>(CupertinoPageRoute<T>(
           builder: (_) => screen,
           settings: settings,
         ));
-      return Navigator.of(this).push<T>(MaterialPageRoute(
+      }
+      return Navigator.of(this).push<T>(MaterialPageRoute<T>(
         builder: (_) => screen,
         settings: settings,
       ));
@@ -69,16 +73,20 @@ extension ContextExtensions on BuildContext {
       name: screen.toString(),
     );
     if (transparent) {
+      // ignore: always_specify_types
       return Navigator.of(this).pushReplacement(TransparentRoute(
         builder: (_) => screen,
         settings: settings,
       ));
     } else {
-      if (isCupertino)
+      if (isCupertino) {
+        // ignore: always_specify_types
         return Navigator.of(this).pushReplacement(CupertinoPageRoute(
           builder: (_) => screen,
           settings: settings,
         ));
+      }
+      // ignore: always_specify_types
       return Navigator.of(this).pushReplacement(MaterialPageRoute(
         builder: (_) => screen,
         settings: settings,
@@ -94,7 +102,7 @@ extension ContextExtensions on BuildContext {
     bool transparent = false,
     bool isCupertino = false,
   }) {
-    this.popToFirst();
+    popToFirst();
     replace(
       screen,
       transparent: transparent,
@@ -110,7 +118,7 @@ extension ContextExtensions on BuildContext {
     bool transparent = false,
     bool isCupertino = false,
   }) {
-    this.popToFirst();
+    popToFirst();
     push(
       screen,
       transparent: transparent,
@@ -123,7 +131,7 @@ extension ContextExtensions on BuildContext {
   void pop<T>({T data}) {
     try {
       Navigator.of(this).pop(data);
-    } catch (e, s) {
+    } on Exception catch (e, s) {
       nsuLogs('pop failed $e\n$s');
     }
   }
@@ -131,7 +139,10 @@ extension ContextExtensions on BuildContext {
   /// Pops the top-most route off the navigator till the first route.
   ///
   void popToFirst() {
-    Navigator.of(this).popUntil((predicate) => predicate.isFirst);
+    // ignore: always_specify_types
+    Navigator.of(this).popUntil((predicate) {
+      return predicate.isFirst;
+    });
   }
 
   /// Consults the current route's [Route.willPop] method, and acts accordingly,

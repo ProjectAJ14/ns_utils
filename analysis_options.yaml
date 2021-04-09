@@ -1,0 +1,13 @@
+include: package:effective_dart/analysis_options.yaml
+linter:
+  rules:
+    public_member_api_docs: false
+    omit_local_variable_types: false
+    lines_longer_than_80_chars: false
+    avoid_types_on_closure_parameters: false
+    always_specify_types: true
+
+analyzer:
+  exclude:
+    - test/extensions/*.dart
+    - test/methods/*.dart

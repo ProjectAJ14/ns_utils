@@ -1,7 +1,10 @@
+// Package imports:
 import 'package:flutter_test/flutter_test.dart';
+
+// Project imports:
 import 'package:ns_utils/src.dart';
 
-main() {
+void main() {
   group('Numbers', () {
     test('asBool', () {
       expect(1.asBool, true);

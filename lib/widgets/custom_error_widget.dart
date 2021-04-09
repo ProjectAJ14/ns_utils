@@ -1,5 +1,8 @@
+// Flutter imports:
 import 'package:flutter/material.dart';
-import 'package:ns_utils/src.dart';
+
+// Project imports:
+import '../src.dart';
 
 String get _restartApp => "Restart App!";
 
@@ -91,7 +94,7 @@ class CustomErrorWidget extends StatelessWidget {
                     ),
                   ],
                 ),
-              OutlineButton(
+              OutlinedButton(
                 child: Text(_restartApp),
                 onPressed: () => onRestart(context),
               ),

@@ -5,7 +5,7 @@ extension DateExtensions on DateTime {
   ///
   int get dayDifference {
     DateTime now = DateTime.now();
-    return DateTime(this.year, this.month, this.day)
+    return DateTime(year, month, day)
         .difference(DateTime(now.year, now.month, now.day))
         .inDays;
   }
@@ -16,15 +16,15 @@ extension DateExtensions on DateTime {
 
   /// return true if the date is today
   ///
-  bool get isToday => this.dayDifference == 0;
+  bool get isToday => dayDifference == 0;
 
   /// return true if the date is Yesterday
   ///
-  bool get isYesterday => this.dayDifference == -1;
+  bool get isYesterday => dayDifference == -1;
 
   /// return true if the date is Tomorrow
   ///
-  bool get isTomorrow => this.dayDifference == 1;
+  bool get isTomorrow => dayDifference == 1;
 
   /// next day
   DateTime tomorrow() => DateTime(year, month, day + 1);
