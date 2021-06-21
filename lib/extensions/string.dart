@@ -128,4 +128,17 @@ extension StringExtensions on String {
     }
     return color;
   }
+
+  ///Add prefix if not empty else return empty string
+  ///
+  String addPrefixIfNotEmpty(String prefix) {
+    if (isEmptyOrNull) {
+      return '';
+    }
+    return '$prefix$this';
+  }
+
+  ///Add prefix if not empty else return empty string
+  ///
+  String get showDashIfEmpty => isEmptyOrNull ? '-' : this;
 }

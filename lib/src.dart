@@ -10,6 +10,7 @@ export 'data_type/stackx.dart';
 export 'extensions/context.dart';
 export 'extensions/date_time.dart';
 export 'extensions/double.dart';
+export 'extensions/duration.dart';
 export 'extensions/functions.dart';
 export 'extensions/int.dart';
 export 'extensions/list.dart';

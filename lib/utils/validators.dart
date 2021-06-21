@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 // Project imports:
 import 'logs.dart';
 
-const Pattern namePattern = r"^[a-zA-Z. ']+$";
+const Pattern namePattern = r"^[a-zA-Z.']+$";
 
 const Pattern passwordPattern = r'^[a-zA-Z0-9@#$%]{6,}$';
 
@@ -65,7 +65,7 @@ class ValidatorUtil {
   static String validateName(
     String value,
     String label, {
-    @required Pattern pattern,
+    Pattern pattern,
   }) {
     nsuLogs("validateName : $value ");
 
