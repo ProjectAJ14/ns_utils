@@ -4,7 +4,7 @@ library ns_utils;
 import 'package:flutter/material.dart';
 
 // Project imports:
-export 'services/shared_preferences/sp_service.dart';
+import 'services/shared_preferences/sp_service.dart';
 
 export 'data_type/stackx.dart';
 export 'extensions/context.dart';
@@ -19,6 +19,8 @@ export 'extensions/string.dart';
 export 'extensions/widgets/gesture_detector.dart';
 export 'extensions/widgets/widgets.dart';
 export 'methods/conversion.dart';
+// Project imports:
+export 'services/shared_preferences/sp_service.dart';
 export 'utils/sizes.dart';
 export 'widgets/spacers.dart';
 
