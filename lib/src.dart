@@ -4,7 +4,7 @@ library ns_utils;
 import 'package:flutter/material.dart';
 
 // Project imports:
-import 'services/shared_preferences/sp_service.dart';
+export 'services/shared_preferences/sp_service.dart';
 
 export 'data_type/stackx.dart';
 export 'extensions/context.dart';

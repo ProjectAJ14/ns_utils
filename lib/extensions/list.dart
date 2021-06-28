@@ -20,4 +20,16 @@ extension ListExtensions on List {
     }
     return data;
   }
+
+  ///List to coma separated Value
+  ///
+  String toComaSeparatedValues() {
+    String data = toString();
+    try {
+      data = join(', ');
+    } on Exception catch (e, s) {
+      nsuLogs("ERROR in getJson $e \n $s");
+    }
+    return data;
+  }
 }
