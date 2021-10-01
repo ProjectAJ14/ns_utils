@@ -10,12 +10,16 @@ const Duration _delayDuration = Duration(milliseconds: 500);
 
 class StatusBarService {
   static Future<Null> hideStatusBar() async {
-    await SystemChrome.setEnabledSystemUIOverlays(
-        <SystemUiOverlay>[SystemUiOverlay.bottom]);
+    if (!kIsWeb) {
+      await SystemChrome.setEnabledSystemUIOverlays(
+          <SystemUiOverlay>[SystemUiOverlay.bottom]);
+    }
   }
 
   static Future<Null> showStatusBar() async {
-    await SystemChrome.setEnabledSystemUIOverlays(SystemUiOverlay.values);
+    if (!kIsWeb) {
+      await SystemChrome.setEnabledSystemUIOverlays(SystemUiOverlay.values);
+    }
   }
 
   static Future<Null> changeStatusColor(
@@ -27,7 +31,8 @@ class StatusBarService {
         await Future<void>.delayed(_delayDuration);
         await FlutterStatusbarcolor.setStatusBarColor(color, animate: true);
         await Future<void>.delayed(_delayDuration);
-        await FlutterStatusbarcolor.setStatusBarWhiteForeground(whiteForeground);
+        await FlutterStatusbarcolor.setStatusBarWhiteForeground(
+            whiteForeground);
       }
     } on PlatformException catch (e) {
       debugPrint('$e');
@@ -35,6 +40,8 @@ class StatusBarService {
   }
 
   static void resetStatusBarColor() {
-    SystemChrome.restoreSystemUIOverlays();
+    if (!kIsWeb) {
+      SystemChrome.restoreSystemUIOverlays();
+    }
   }
 }
