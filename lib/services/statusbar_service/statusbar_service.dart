@@ -1,4 +1,5 @@
 // Flutter imports:
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -22,10 +23,12 @@ class StatusBarService {
     bool whiteForeground = true,
   }) async {
     try {
-      await Future<void>.delayed(_delayDuration);
-      await FlutterStatusbarcolor.setStatusBarColor(color, animate: true);
-      await Future<void>.delayed(_delayDuration);
-      await FlutterStatusbarcolor.setStatusBarWhiteForeground(whiteForeground);
+      if (!kIsWeb) {
+        await Future<void>.delayed(_delayDuration);
+        await FlutterStatusbarcolor.setStatusBarColor(color, animate: true);
+        await Future<void>.delayed(_delayDuration);
+        await FlutterStatusbarcolor.setStatusBarWhiteForeground(whiteForeground);
+      }
     } on PlatformException catch (e) {
       debugPrint('$e');
     }
