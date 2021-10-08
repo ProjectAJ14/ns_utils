@@ -9,7 +9,6 @@ class SPService {
   static late SharedPreferences instance;
 
   static Future<Null> init() async {
-    appLogsNS('$SPService init');
     instance = await SharedPreferences.getInstance();
   }
 

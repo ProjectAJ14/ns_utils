@@ -1,7 +1,6 @@
 ## [1.0.0]
 - Migrating to null safety
 
-
 ## [0.0.7]
 - Added Function Extensions
 - Added more Map Extensions

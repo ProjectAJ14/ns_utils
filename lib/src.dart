@@ -31,21 +31,29 @@ typedef ErrorLogCallBack = void Function(
   StackTrace stackTrace,
 ]);
 
-late LogCallBack appLogsNS;
-late LogCallBack apiLogsNS;
-late ErrorLogCallBack errorLogsNS;
+void _appLogs(
+  dynamic message, {
+  String atomLogType = "",
+}) {}
+
+void errorLogs(dynamic message, [dynamic error, StackTrace? stackTrace]) {}
+
+LogCallBack appLogsNS = _appLogs;
+ErrorLogCallBack errorLogsNS = errorLogs;
 
 class NSUtils {
   static NSUtils instance = NSUtils();
 
   Future<Null> init({
-    required LogCallBack appLogsFunction,
-    required LogCallBack apiLogsFunction,
-    required ErrorLogCallBack errorLogsFunction,
+    LogCallBack? appLogsFunction,
+    ErrorLogCallBack? errorLogsFunction,
   }) async {
-    appLogsNS = appLogsFunction;
-    appLogsNS = apiLogsFunction;
-    errorLogsNS = errorLogsFunction;
+    if (appLogsFunction != null) {
+      appLogsNS = appLogsFunction;
+    }
+    if (errorLogsFunction != null) {
+      errorLogsNS = errorLogsFunction;
+    }
     await SPService.init();
   }
 }
