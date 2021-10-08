@@ -21,25 +21,25 @@ export 'utils/sizes.dart';
 export 'widgets/spacers.dart';
 
 typedef LogCallBack = void Function(
-  dynamic message, {
-  String atomLogType,
-});
+  Object object, [
+  Object detail,
+]);
 
 typedef ErrorLogCallBack = void Function(
-  dynamic message, [
+  Object object, [
   dynamic error,
   StackTrace stackTrace,
 ]);
 
 void _appLogs(
-  dynamic message, {
-  String atomLogType = "",
-}) {}
+  dynamic object, [
+  Object detail = "",
+]) {}
 
-void errorLogs(dynamic message, [dynamic error, StackTrace? stackTrace]) {}
+void _errorLogs(Object message, [dynamic error, StackTrace? stackTrace]) {}
 
 LogCallBack appLogsNS = _appLogs;
-ErrorLogCallBack errorLogsNS = errorLogs;
+ErrorLogCallBack errorLogsNS = _errorLogs;
 
 class NSUtils {
   static NSUtils instance = NSUtils();

@@ -121,3 +121,25 @@ extension StringExtensions on String {
   ///
   String get showDashIfEmpty => isEmpty ? '-' : this;
 }
+
+extension StringNullExtensions on String? {
+  /// Return a bool if the string is null or empty
+  ///
+  bool get isEmptyOrNull {
+    if (this == null || this == '') {
+      return true;
+    }
+    return false;
+  }
+
+  /// Returns true if s is neither null, empty nor is solely made of whitespace characters.
+  ///
+  bool get isNotBlank {
+    if (this != null) {
+      String data = this?.trim() ?? '';
+      return data.isNotEmpty;
+    } else {
+      return true;
+    }
+  }
+}
