@@ -28,7 +28,6 @@ dependencies:
   #<editor-fold desc="DEVICE APIS">
   device_info: ^2.0.2
   package_info: ^2.0.2
-  flutter_statusbarcolor_ns: ^0.3.0-nullsafety
   #</editor-fold>
 
   flutter:
