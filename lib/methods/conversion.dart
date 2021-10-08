@@ -1,31 +1,32 @@
-// Project imports:
 import '../constants.dart';
-import '../utils/logs.dart';
+import '../src.dart';
 
 ///Parse to int or returns [defaultValue]
 ///
-int toInt(Object value, {int defaultValue = defaultInt}) {
+int toInt(
+  Object value, {
+  int defaultValue = defaultInt,
+}) {
   int number = defaultValue;
-  if (value != null) {
-    try {
-      number = toDouble(value).toInt();
-    } on Exception catch (e, s) {
-      nsuLogs("toInt Exception : $e\n$s");
-    }
+  try {
+    number = toDouble(value).toInt();
+  } on Exception catch (e, s) {
+    errorLogsNS("toInt", e, s);
   }
   return number;
 }
 
 ///Parse to double or returns [defaultValue]
 ///
-double toDouble(Object value, {double defaultValue = defaultDouble}) {
+double toDouble(
+  Object value, {
+  double defaultValue = defaultDouble,
+}) {
   double number = defaultDouble;
-  if (value != null) {
-    try {
-      number = double.parse('$value') ?? defaultDouble;
-    } on Exception catch (e, s) {
-      nsuLogs("toDouble Exception : $e\n$s");
-    }
+  try {
+    number = double.parse('$value');
+  } on Exception catch (e, s) {
+    errorLogsNS("toDouble", e, s);
   }
   return number;
 }

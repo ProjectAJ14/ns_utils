@@ -1,7 +1,5 @@
-// Flutter imports:
 import 'package:flutter/material.dart';
 
-// Project imports:
 import '../utils/sizes.dart';
 
 class P1 extends StatelessWidget {
@@ -68,6 +66,8 @@ class P40 extends StatelessWidget {
 }
 
 class C0 extends StatelessWidget {
+  const C0({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -78,9 +78,14 @@ class C0 extends StatelessWidget {
 }
 
 class C1 extends StatelessWidget {
+  final Color? color;
+
+  const C1({Key? key, this.color}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Container(
+      color: color ?? Colors.transparent,
       height: Sizes.s1,
       width: Sizes.s1,
     );
@@ -88,9 +93,14 @@ class C1 extends StatelessWidget {
 }
 
 class C2 extends StatelessWidget {
+  final Color? color;
+
+  const C2({Key? key, this.color}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Container(
+      color: color ?? Colors.transparent,
       height: Sizes.s2,
       width: Sizes.s2,
     );
@@ -98,9 +108,14 @@ class C2 extends StatelessWidget {
 }
 
 class C3 extends StatelessWidget {
+  final Color? color;
+
+  const C3({Key? key, this.color}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Container(
+      color: color ?? Colors.transparent,
       height: Sizes.s3,
       width: Sizes.s3,
     );
@@ -108,9 +123,14 @@ class C3 extends StatelessWidget {
 }
 
 class C4 extends StatelessWidget {
+  final Color? color;
+
+  const C4({Key? key, this.color}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Container(
+      color: color ?? Colors.transparent,
       height: Sizes.s4,
       width: Sizes.s4,
     );
@@ -118,9 +138,14 @@ class C4 extends StatelessWidget {
 }
 
 class C5 extends StatelessWidget {
+  final Color? color;
+
+  const C5({Key? key, this.color}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Container(
+      color: color ?? Colors.transparent,
       height: Sizes.s5,
       width: Sizes.s5,
     );
@@ -128,19 +153,29 @@ class C5 extends StatelessWidget {
 }
 
 class C6 extends StatelessWidget {
+  final Color? color;
+
+  const C6({Key? key, this.color}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: Sizes.s5 + Sizes.s1,
-      width: Sizes.s5 + Sizes.s1,
+      color: color ?? Colors.transparent,
+      height: Sizes.s6,
+      width: Sizes.s6,
     );
   }
 }
 
 class C8 extends StatelessWidget {
+  final Color? color;
+
+  const C8({Key? key, this.color}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Container(
+      color: color ?? Colors.transparent,
       height: Sizes.s8,
       width: Sizes.s8,
     );
@@ -148,9 +183,9 @@ class C8 extends StatelessWidget {
 }
 
 class C10 extends StatelessWidget {
-  final Color color;
+  final Color? color;
 
-  const C10({Key key, this.color}) : super(key: key);
+  const C10({Key? key, this.color}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -163,9 +198,14 @@ class C10 extends StatelessWidget {
 }
 
 class C15 extends StatelessWidget {
+  final Color? color;
+
+  const C15({Key? key, this.color}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Container(
+      color: color ?? Colors.transparent,
       height: Sizes.s15,
       width: Sizes.s15,
     );
@@ -173,9 +213,9 @@ class C15 extends StatelessWidget {
 }
 
 class C20 extends StatelessWidget {
-  final Color color;
+  final Color? color;
 
-  const C20({Key key, this.color}) : super(key: key);
+  const C20({Key? key, this.color}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -188,9 +228,9 @@ class C20 extends StatelessWidget {
 }
 
 class C40 extends StatelessWidget {
-  final Color color;
+  final Color? color;
 
-  const C40({Key key, this.color}) : super(key: key);
+  const C40({Key? key, this.color}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -203,9 +243,9 @@ class C40 extends StatelessWidget {
 }
 
 class C30 extends StatelessWidget {
-  final Color color;
+  final Color? color;
 
-  const C30({Key key, this.color}) : super(key: key);
+  const C30({Key? key, this.color}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -218,9 +258,9 @@ class C30 extends StatelessWidget {
 }
 
 class C50 extends StatelessWidget {
-  final Color color;
+  final Color? color;
 
-  const C50({Key key, this.color}) : super(key: key);
+  const C50({Key? key, this.color}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -233,9 +273,9 @@ class C50 extends StatelessWidget {
 }
 
 class C100 extends StatelessWidget {
-  final Color color;
+  final Color? color;
 
-  const C100({Key key, this.color}) : super(key: key);
+  const C100({Key? key, this.color}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -248,9 +288,9 @@ class C100 extends StatelessWidget {
 }
 
 class C150 extends StatelessWidget {
-  final Color color;
+  final Color? color;
 
-  const C150({Key key, this.color}) : super(key: key);
+  const C150({Key? key, this.color}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

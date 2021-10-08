@@ -1,24 +1,23 @@
 // Package imports:
 import 'package:shared_preferences/shared_preferences.dart';
 
-// Project imports:
-import '../../utils/logs.dart';
+import '../../src.dart';
 
 class SPService {
   final String _tag = 'SPService';
 
-  static SharedPreferences instance;
+  static late SharedPreferences instance;
 
   static Future<Null> init() async {
-    nsuLogs('$SPService init');
+    appLogsNS('$SPService init');
     instance = await SharedPreferences.getInstance();
   }
 
   static void clear() {
-    instance?.clear();
+    instance.clear();
   }
 
   void log() {
-    nsuLogs('$_tag');
+    appLogsNS('$_tag $instance');
   }
 }

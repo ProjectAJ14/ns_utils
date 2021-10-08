@@ -1,4 +1,3 @@
-// Project imports:
 import '../constants.dart';
 
 extension IntExtensions on int {
@@ -28,7 +27,7 @@ extension IntExtensions on int {
 
   /// returns null if 0
   ///
-  int get asNullIfZero => this == 0 ? null : this;
+  int? get asNullIfZero => this == 0 ? null : this;
 
   /// Returns true if this is null or 0
   ///

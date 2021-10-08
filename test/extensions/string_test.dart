@@ -1,7 +1,5 @@
-// Package imports:
 import 'package:flutter_test/flutter_test.dart';
 
-// Project imports:
 import 'package:ns_utils/src.dart';
 
 void main() {
@@ -20,17 +18,9 @@ void main() {
 
       expect('["1","2"]'.toList(), ["1", "2"]);
     });
-    test('isEmptyOrNull', () {
-      expect(''.isEmptyOrNull, true);
-      expect('Ajay'.isEmptyOrNull, false);
-      String value;
-      expect(value.isEmptyOrNull, true);
-    });
     test('isNotBlank', () {
       expect(''.isNotBlank, false);
       expect('Ajay'.isNotBlank, true);
-      String value;
-      expect(value.isNotBlank, false);
     });
     test('toINT', () {
       expect('12121'.toINT, 12121);

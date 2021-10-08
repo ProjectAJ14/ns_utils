@@ -1,9 +1,5 @@
 library ns_utils;
 
-// Flutter imports:
-import 'package:flutter/material.dart';
-
-// Project imports:
 import 'services/shared_preferences/sp_service.dart';
 
 export 'data_type/stackx.dart';
@@ -19,22 +15,37 @@ export 'extensions/string.dart';
 export 'extensions/widgets/gesture_detector.dart';
 export 'extensions/widgets/widgets.dart';
 export 'methods/conversion.dart';
-// Project imports:
+
 export 'services/shared_preferences/sp_service.dart';
 export 'utils/sizes.dart';
 export 'widgets/spacers.dart';
 
+typedef LogCallBack = void Function(
+  dynamic message, {
+  String atomLogType,
+});
+
+typedef ErrorLogCallBack = void Function(
+  dynamic message, [
+  dynamic error,
+  StackTrace stackTrace,
+]);
+
+late LogCallBack appLogsNS;
+late LogCallBack apiLogsNS;
+late ErrorLogCallBack errorLogsNS;
+
 class NSUtils {
-  bool _printLogs = false;
-
-  bool get printLogs => _printLogs;
-
   static NSUtils instance = NSUtils();
 
   Future<Null> init({
-    @required bool printLogs,
+    required LogCallBack appLogsFunction,
+    required LogCallBack apiLogsFunction,
+    required ErrorLogCallBack errorLogsFunction,
   }) async {
-    _printLogs = printLogs;
+    appLogsNS = appLogsFunction;
+    appLogsNS = apiLogsFunction;
+    errorLogsNS = errorLogsFunction;
     await SPService.init();
   }
 }

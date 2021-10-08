@@ -12,7 +12,7 @@ extension DateExtensions on DateTime {
 
   /// Returns an ISO-8601 full-precision extended format representation.
   ///
-  String toServerFormat() => this?.toUtc()?.toIso8601String();
+  String toServerFormat() => toUtc().toIso8601String();
 
   /// return true if the date is today
   ///

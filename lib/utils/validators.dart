@@ -1,14 +1,12 @@
-// Flutter imports:
 import 'package:flutter/material.dart';
 
-// Project imports:
-import 'logs.dart';
+import '../src.dart';
 
-const Pattern namePattern = r"^[a-zA-Z.']+$";
+const String namePattern = r"^[a-zA-Z.']+$";
 
-const Pattern passwordPattern = r'^[a-zA-Z0-9@#$%]{6,}$';
+const String passwordPattern = r'^[a-zA-Z0-9@#$%]{6,}$';
 
-const Pattern emailPattern =
+const String emailPattern =
     r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$';
 
 const String enter = "Enter ";
@@ -22,28 +20,31 @@ const String passwordValidationMsg =
     "Minimum 6 characters,include upper and lower case letters,numbers,symbols(@,#,\$,%)";
 
 class ValidatorUtil {
-  static bool isFormValid(GlobalKey<FormState> _formKey) {
+  ValidatorUtil._();
+
+  static bool isFormValid(GlobalKey<FormState>? _formKey) {
     try {
-      final FormState form = _formKey.currentState;
-      if (form.validate()) {
-        form.save();
-
-        nsuLogs('$_formKey isFormValid:true');
-
-        return true;
+      final FormState? form = _formKey?.currentState;
+      if (form != null) {
+        if (form.validate()) {
+          form.save();
+          appLogsNS('$_formKey isFormValid:true');
+          return true;
+        }
+      } else {
+        errorLogsNS('$_formKey isFormValid[_formKey?.currentState] is NULL');
       }
-      nsuLogs('$_formKey isFormValid:false');
     } on Exception catch (e, s) {
-      nsuLogs('$_formKey isFormValid $e\n$s');
+      errorLogsNS('$_formKey isFormValid', e, s);
     }
     return false;
   }
 
-  static String validateEmail(
+  static String? validateEmail(
     String value, {
-    String errorMessage,
+    String? errorMessage,
   }) {
-    nsuLogs("validateEmail : $value ");
+    appLogsNS("validateEmail : $value ");
 
     if (value.trim().isEmpty) return enterEmail;
 
@@ -52,8 +53,8 @@ class ValidatorUtil {
     return errorMessage ?? enterValidEmail;
   }
 
-  static String validatePassword(String value) {
-    nsuLogs("validatePassword : $value ");
+  static String? validatePassword(String value) {
+    appLogsNS("validatePassword : $value ");
 
     if (value.trim().isEmpty) return enterPassword;
 
@@ -62,12 +63,12 @@ class ValidatorUtil {
     return passwordValidationMsg;
   }
 
-  static String validateName(
+  static String? validateName(
     String value,
     String label, {
-    Pattern pattern,
+    String? pattern,
   }) {
-    nsuLogs("validateName : $value ");
+    appLogsNS("validateName : $value ");
 
     if (value.trim().isEmpty) return '$enter $label';
 
@@ -76,11 +77,11 @@ class ValidatorUtil {
     return '$enterValid $label';
   }
 
-  static String validatePattern(
+  static String? validatePattern(
     String value, {
-    @required String label,
-    @required Pattern pattern,
-    String errorMessage,
+    required String label,
+    required String pattern,
+    String? errorMessage,
   }) {
     if (value.trim().isEmpty) return emptyMessage;
 
@@ -89,27 +90,27 @@ class ValidatorUtil {
     return errorMessage ?? '$enterValid $label';
   }
 
-  static String validateEmptyCheck(String value) {
+  static String? validateEmptyCheck(String value) {
     if (value.trim().isEmpty) return emptyMessage;
 
     return null;
   }
 
-  static String validateEmpty(String value, String label) {
+  static String? validateEmpty(String value, String label) {
     if (value.trim().isEmpty) return enter + label;
 
     return null;
   }
 
   static bool hasMatch({
-    @required Pattern pattern,
-    @required String value,
+    required String pattern,
+    required String value,
   }) {
     RegExp regex = RegExp(pattern);
 
     bool result = regex.hasMatch(value);
 
-    nsuLogs('hasMatch $pattern $value => $result');
+    appLogsNS('hasMatch $pattern $value => $result');
 
     return result;
   }

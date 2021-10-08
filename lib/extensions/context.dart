@@ -1,10 +1,8 @@
-// Flutter imports:
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-// Project imports:
 import '../page_route/tansparent_route.dart';
-import '../utils/logs.dart';
+import '../src.dart';
 
 extension ContextExtensions on BuildContext {
   // Returns the MediaQuery
@@ -28,13 +26,13 @@ extension ContextExtensions on BuildContext {
   /// Requests the primary focus for this node, or for a supplied [node], which
   /// will also give focus to its [ancestors].
   ///
-  void setFocus({FocusNode focusNode}) {
+  void setFocus({FocusNode? focusNode}) {
     FocusScope.of(this).requestFocus(focusNode ?? FocusNode());
   }
 
   /// Push the given route onto the navigator.
   ///
-  Future<T> push<T>(
+  Future<T?> push<T>(
     Widget screen, {
     bool transparent = false,
     bool isCupertino = false,
@@ -128,11 +126,11 @@ extension ContextExtensions on BuildContext {
 
   /// Pop the top-most route off the navigator.
   ///
-  void pop<T>({T data}) {
+  void pop<T>({T? data}) {
     try {
       Navigator.of(this).pop(data);
     } on Exception catch (e, s) {
-      nsuLogs('pop failed $e\n$s');
+      errorLogsNS('pop failed', e, s);
     }
   }
 

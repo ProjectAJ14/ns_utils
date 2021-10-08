@@ -1,17 +1,16 @@
-// Flutter imports:
 import 'package:flutter/material.dart';
 
 // Package imports:
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-// Project imports:
 import '../src.dart';
-import 'logs.dart';
 
-double defaultScreenWidth = 400;
-double defaultScreenHeight = 810;
-double screenWidth = defaultScreenWidth;
-double screenHeight = defaultScreenHeight;
+const Size _defaultSize = Size(360, 690);
+
+double defaultScreenWidth = _defaultSize.width;
+double defaultScreenHeight = _defaultSize.width;
+double screenWidth = _defaultSize.width;
+double screenHeight = _defaultSize.height;
 
 ///Adapting screen and font size.
 ///Let your UI display a reasonable layout on different screen sizes!
@@ -89,7 +88,13 @@ class Sizes {
 
   static double get s200 => getSize(200);
 
+  static double get s220 => getSize(220);
+
   static double get s300 => getSize(300);
+
+  static double get s400 => getSize(400);
+
+  static double get s500 => getSize(500);
 
   //</editor-fold>
 
@@ -106,9 +111,14 @@ class Sizes {
   ///initialize sizes
   ///Should be called only once
   ///
-  static void initScreenAwareSizes(BuildContext context) {
+  static void initScreenAwareSizes(
+    BuildContext context, {
+    required BoxConstraints constraints,
+    Orientation orientation = Orientation.portrait,
+    Size designSize = _defaultSize,
+  }) {
     if (initialized) {
-      nsuLogs('Sizes already initialized');
+      appLogsNS('Sizes already initialized');
       printScreenInformation();
       return;
     }
@@ -135,10 +145,9 @@ class Sizes {
     }
 
     ScreenUtil.init(
-      context,
-      width: defaultScreenWidth,
-      height: defaultScreenHeight,
-      allowFontScaling: true,
+      constraints,
+      orientation: orientation,
+      designSize: designSize,
     );
 
     FontSizes.initScreenAwareFontSize();
@@ -147,7 +156,7 @@ class Sizes {
   }
 
   static void printScreenInformation() {
-    nsuLogs('''
+    appLogsNS('''
     Device Screen Details
     screenWidth: $screenWidth
     screenHeight: $screenHeight
@@ -168,15 +177,15 @@ class Sizes {
     20  :  ${FontSizes.s20}  
     
     ---------X--------X-----------
-    Device width px: ${ScreenUtil.screenWidth}
-    Device height px: ${ScreenUtil.screenHeight}
-    Device pixel density: ${ScreenUtil.pixelRatio}
-    Bottom safe zone distance dp: ${ScreenUtil.bottomBarHeight}
-    Status bar height px: ${ScreenUtil.statusBarHeight}dp
+    Device width px: ${ScreenUtil().screenWidth}
+    Device height px: ${ScreenUtil().screenHeight}
+    Device pixel density: ${ScreenUtil().pixelRatio}
+    Bottom safe zone distance dp: ${ScreenUtil().bottomBarHeight}
+    Status bar height px: ${ScreenUtil().statusBarHeight}dp
     Ratio of actual width dp to design draft px: ${ScreenUtil().scaleWidth}
     Ratio of actual height dp to design draft px: ${ScreenUtil().scaleHeight}
-    The ratio of font and width to the size of the design: ${ScreenUtil().scaleWidth * ScreenUtil.pixelRatio}
-    The ratio of  height width to the size of the design: ${ScreenUtil().scaleHeight * ScreenUtil.pixelRatio}
+    The ratio of font and width to the size of the design: ${ScreenUtil().scaleWidth * ScreenUtil().pixelRatio}
+    The ratio of  height width to the size of the design: ${ScreenUtil().scaleHeight * ScreenUtil().pixelRatio}
     ''');
   }
 
@@ -250,7 +259,7 @@ class FontSizes {
   ///
   static void initScreenAwareFontSize() {
     if (initialized) {
-      nsuLogs('FontSize already initialized');
+      appLogsNS('FontSize already initialized');
       return;
     }
     initialized = true;

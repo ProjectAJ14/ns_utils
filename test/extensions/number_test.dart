@@ -1,7 +1,7 @@
 // Package imports:
 import 'package:flutter_test/flutter_test.dart';
 
-// Project imports:
+
 import 'package:ns_utils/src.dart';
 
 void main() {

@@ -30,7 +30,7 @@ extension DoubleExtensions on double {
 
   /// returns null if 0
   ///
-  double get asNullIfZero => this == 0 ? null : this;
+  double? get asNullIfZero => this == 0 ? null : this;
 
   /// Returns true if this is null or 0
   ///

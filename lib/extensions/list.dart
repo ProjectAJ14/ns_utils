@@ -1,9 +1,7 @@
-// Dart imports:
 import 'dart:convert';
 
-// Project imports:
 import '../constants.dart';
-import '../utils/logs.dart' show nsuLogs;
+import '../src.dart';
 
 /// extension methods for List
 ///
@@ -14,9 +12,9 @@ extension ListExtensions on List {
   String toJson() {
     String data = defaultString;
     try {
-      data = json.encode(this ?? defaultList);
+      data = json.encode(this);
     } on Exception catch (e, s) {
-      nsuLogs("ERROR in getJson $e \n $s");
+      errorLogsNS("ERROR in getJson", e, s);
     }
     return data;
   }
@@ -28,7 +26,7 @@ extension ListExtensions on List {
     try {
       data = join(', ');
     } on Exception catch (e, s) {
-      nsuLogs("ERROR in getJson $e \n $s");
+      errorLogsNS("ERROR in toComaSeparatedValues", e, s);
     }
     return data;
   }

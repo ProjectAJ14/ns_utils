@@ -1,7 +1,5 @@
-// Flutter imports:
 import 'package:flutter/material.dart';
 
-// Project imports:
 import '../src.dart';
 
 String get _restartApp => "Restart App!";
@@ -22,14 +20,12 @@ class CustomErrorWidget extends StatelessWidget {
   final Function(BuildContext) onRestart;
 
   const CustomErrorWidget({
-    Key key,
-    @required this.errorDetails,
-    @required this.showErrorDetails,
-    @required this.logoAsset,
-    @required this.onRestart,
-  })  : assert(showErrorDetails != null),
-        assert(logoAsset != null),
-        super(key: key);
+    Key? key,
+    required this.errorDetails,
+    required this.showErrorDetails,
+    required this.logoAsset,
+    required this.onRestart,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

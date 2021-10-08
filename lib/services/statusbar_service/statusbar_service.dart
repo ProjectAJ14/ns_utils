@@ -1,24 +1,25 @@
-// Flutter imports:
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_statusbarcolor_ns/flutter_statusbarcolor_ns.dart';
 
 // Package imports:
-import 'package:flutter_statusbarcolor/flutter_statusbarcolor.dart';
-
 const Duration _delayDuration = Duration(milliseconds: 500);
 
 class StatusBarService {
+  StatusBarService._();
+
   static Future<Null> hideStatusBar() async {
     if (!kIsWeb) {
-      await SystemChrome.setEnabledSystemUIOverlays(
-          <SystemUiOverlay>[SystemUiOverlay.bottom]);
+      await SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual,
+          overlays: <SystemUiOverlay>[SystemUiOverlay.bottom]);
     }
   }
 
   static Future<Null> showStatusBar() async {
     if (!kIsWeb) {
-      await SystemChrome.setEnabledSystemUIOverlays(SystemUiOverlay.values);
+      await SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual,
+          overlays: SystemUiOverlay.values);
     }
   }
 

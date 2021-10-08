@@ -1,16 +1,12 @@
 // Package imports:
 import 'package:flutter_test/flutter_test.dart';
 
-// Project imports:
 import 'package:ns_utils/src.dart';
 
 void main() {
   group('MapExtensions', () {
     test('getBool', () {
-      Map data;
-      expect(data.getBool('key'), false);
-      expect(data.getBool('key', defaultValue: true), true);
-      data = {
+      Map data = {
         'key': true,
       };
       expect(data.getBool('key'), true);
@@ -20,10 +16,7 @@ void main() {
       expect(data.getBool('key'), false);
     });
     test('getInt', () {
-      Map data;
-      expect(data.getInt('key'), 0);
-      expect(data.getInt('key', defaultValue: 1), 1);
-      data = {
+      Map data = {
         'key': 1,
       };
       expect(data.getInt('key'), 1);
@@ -33,10 +26,7 @@ void main() {
       expect(data.getInt('key'), 0);
     });
     test('getDouble', () {
-      Map data;
-      expect(data.getDouble('key'), 0);
-      expect(data.getDouble('key', defaultValue: 1.5), 1.5);
-      data = {
+      Map data = {
         'key': 1.1,
       };
       expect(data.getDouble('key'), 1.1);
@@ -61,9 +51,7 @@ void main() {
       expect(data.getString('key'), '');
     });
     test('getList', () {
-      Map data;
-      expect(data.getList('key'), []);
-      data = {
+      Map data = {
         'key': [1, 2, 3],
       };
       expect(data.getList('key'), [1, 2, 3]);
@@ -73,9 +61,7 @@ void main() {
       expect(data.getList('key'), []);
     });
     test('getMap', () {
-      Map data;
-      expect(data.getMap('key'), {});
-      data = {
+      Map data = {
         'key': {"id": 1},
       };
       expect(data.getMap('key'), {"id": 1});
@@ -85,9 +71,7 @@ void main() {
       expect(data.getMap('key'), {});
     });
     test('toJson', () {
-      Map data;
-      expect(data.toJson(), "{}");
-      data = {
+      Map data = {
         'key': {"id": 1},
       };
       expect(data.toJson(), '{"key":{"id":1}}');

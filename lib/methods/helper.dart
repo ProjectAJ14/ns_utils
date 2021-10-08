@@ -1,6 +1,5 @@
-import 'package:crossplat_objectid/crossplat_objectid.dart'
-    as cross_plat_object_id;
+import '../utils/crossplat_object_id/src/objectid.dart';
 
 String generateDbId() {
-  return cross_plat_object_id.ObjectId().toHexString();
+  return ObjectId().toHexString();
 }

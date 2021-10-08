@@ -1,7 +1,7 @@
 // Package imports:
 import 'package:flutter_test/flutter_test.dart';
 
-// Project imports:
+
 import 'package:ns_utils/methods/conversion.dart';
 
 void main() {
@@ -9,7 +9,6 @@ void main() {
     test('toInt', () {
       expect(toInt(1), 1);
       expect(toInt(1.1), 1);
-      expect(toInt(null), 0);
       expect(toInt('1'), 1);
       expect(toInt('12121'), 12121);
       expect(toInt('12.121'), 12);
@@ -18,7 +17,6 @@ void main() {
     test('toDouble', () {
       expect(toDouble(1.0), 1);
       expect(toDouble(1.1), 1.1);
-      expect(toDouble(null), 0);
       expect(toDouble('1'), 1);
       expect(toDouble('12121'), 12121);
       expect(toDouble('12.121'), 12.121);

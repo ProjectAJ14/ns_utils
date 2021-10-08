@@ -1,5 +1,5 @@
 # ns_utils
-[![](https://img.shields.io/badge/build-0.0.7-brightgreen)][repo_link]
+[![](https://img.shields.io/badge/build-1.0.0-brightgreen)][repo_link]
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 [![style: effective dart][badge]][badge_link]
 
@@ -144,10 +144,7 @@ If value is NULL or not same type return default value [defaultValue]
 
 ```dart
     test('getBool', () {
-      Map data;
-      expect(data.getBool('key'), false);
-      expect(data.getBool('key', defaultValue: true), true);
-      data = {
+      Map data = {
         'key': true,
       };
       expect(data.getBool('key'), true);
@@ -161,9 +158,7 @@ If value is NULL or not same type return default value [defaultValue]
 Map to JSON using[json.encode]
 ```dart
     test('toJson', () {
-      Map data;
-      expect(data.toJson(), "{}");
-      data = {
+      Map data = {
         'key': {"id": 1},
       };
       expect(data.toJson(), '{"key":{"id":1}}');
@@ -220,8 +215,6 @@ Map to JSON using[json.encode]
       expect([12, 12].toJson(), '[12,12]');
       expect([].toJson(), '[]');
       expect(['123', '1234'].toJson(), '["123","1234"]');
-      List list;
-      expect(list.toJson(), '[]');
     });
 ```
 
@@ -268,8 +261,6 @@ Returns true if s is neither null, empty nor is solely made of whitespace charac
     test('isNotBlank', () {
       expect(''.isNotBlank, false);
       expect('Ajay'.isNotBlank, true);
-      String value;
-      expect(value.isNotBlank, false);
     });
 ```
 
@@ -413,4 +404,4 @@ There are couple of ways in which you can contribute.
 
 [badge]: https://img.shields.io/badge/style-effective_dart-40c4ff.svg
 [badge_link]: https://pub.dev/packages/effective_dart
-[repo_link]: https://github.com/ajaynonstopio/ns_utils
+[repo_link]: https://github.com/ajaykumargithub2114/ns_utils
