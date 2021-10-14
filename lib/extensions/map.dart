@@ -47,7 +47,7 @@ extension MapExtensions on Map {
   ///.
   String getString(String key, {String defaultValue = defaultString}) {
     if (containsKey(key)) {
-      return this[key] ?? defaultValue;
+      return this[key].toString() ;
     }
     errorLogsNS("Map.getString[$key] has incorrect data : ${this[key]}");
     return defaultValue;
