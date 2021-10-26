@@ -26,7 +26,7 @@ extension MapExtensions on Map {
   /// If value is NULL or not [int] type return default value [defaultInt]
   ///
   int getInt(String key, {int defaultValue = defaultInt}) {
-    if (containsKey(key)) return toInt(this[key] ?? defaultInt);
+    if (containsKey(key)) return toInt(this[key] ?? defaultValue);
     errorLogsNS("Map.getInt[$key] has incorrect data : ${this[key]}");
     return defaultValue;
   }
@@ -36,7 +36,7 @@ extension MapExtensions on Map {
   /// If value is NULL or not [double] type return default value [defaultDouble]
   ///
   double getDouble(String key, {double defaultValue = defaultDouble}) {
-    if (containsKey(key)) return toDouble(this[key] ?? defaultDouble);
+    if (containsKey(key)) return toDouble(this[key] ?? defaultValue);
     errorLogsNS("Map.getDouble[$key] has incorrect data : ${this[key]}");
     return defaultValue;
   }
@@ -47,7 +47,7 @@ extension MapExtensions on Map {
   ///.
   String getString(String key, {String defaultValue = defaultString}) {
     if (containsKey(key)) {
-      return this[key]?.toString() ?? defaultString;
+      return this[key]?.toString() ?? defaultValue;
     }
     errorLogsNS("Map.getString[$key] has incorrect data : ${this[key]}");
     return defaultValue;
