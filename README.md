@@ -405,3 +405,7 @@ There are couple of ways in which you can contribute.
 [badge]: https://img.shields.io/badge/style-effective_dart-40c4ff.svg
 [badge_link]: https://pub.dev/packages/effective_dart
 [repo_link]: https://github.com/ajaykumargithub2114/ns_utils
+[publish_package]: flutter pub publish --dry-run
+
+
+

@@ -1,3 +1,6 @@
+## [1.0.0]
+- Minor fixes on null safety. Thanks [Rajan](https://github.com/rajan-nonstopio)
+
 ## [1.0.0-nullsafety]
 - Migrating to null safety
 
