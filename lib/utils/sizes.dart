@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 // Package imports:
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -145,9 +144,12 @@ class Sizes {
     }
 
     ScreenUtil.init(
-      constraints,
+      BoxConstraints(
+        maxWidth: screenWidth,
+        maxHeight: screenHeight,
+      ),
       orientation: orientation,
-      designSize: designSize,
+      designSize: Size(defaultScreenWidth, defaultScreenHeight),
     );
 
     FontSizes.initScreenAwareFontSize();
