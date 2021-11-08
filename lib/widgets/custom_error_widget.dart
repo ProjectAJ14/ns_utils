@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../src.dart';
 
@@ -33,8 +34,8 @@ class CustomErrorWidget extends StatelessWidget {
       child: SafeArea(
         child: Container(
           decoration: BoxDecoration(border: Border.all(color: Colors.red)),
-          padding: EdgeInsets.symmetric(horizontal: Sizes.s30),
-          constraints: BoxConstraints(maxHeight: screenWidth / Sizes.s2),
+          padding: EdgeInsets.symmetric(horizontal: 30.w),
+          constraints: BoxConstraints(maxHeight: screenWidth / 2.w),
           child: ListView(
             shrinkWrap: true,
             children: <Widget>[
@@ -48,14 +49,14 @@ class CustomErrorWidget extends StatelessWidget {
                         logoAsset,
                         fit: BoxFit.contain,
                       ),
-                      height: Sizes.s100,
-                      width: Sizes.s100,
+                      height: 100.w,
+                      width: 100.w,
                     ),
                     C20(),
                     Text(
                       _crashFinalTitle,
                       style: TextStyle(
-                        fontSize: FontSizes.s20,
+                        fontSize: 20.w,
                       ),
                       textAlign: TextAlign.center,
                     ),
@@ -63,7 +64,7 @@ class CustomErrorWidget extends StatelessWidget {
                     Text(
                       _crashFinalMessage,
                       style: TextStyle(
-                        fontSize: FontSizes.s18,
+                        fontSize: 18.w,
                       ),
                       textAlign: TextAlign.justify,
                     ),
@@ -76,7 +77,7 @@ class CustomErrorWidget extends StatelessWidget {
                     Text(
                       '${errorDetails.summary.toString()}',
                       style: TextStyle(
-                        fontSize: FontSizes.s18,
+                        fontSize: 18.sp,
                         color: Colors.red,
                       ),
                     ),
@@ -84,7 +85,7 @@ class CustomErrorWidget extends StatelessWidget {
                     Text(
                       "$errorDetails",
                       style: TextStyle(
-                        fontSize: FontSizes.s13,
+                        fontSize: 13.sp,
                         color: Colors.red,
                       ),
                     ),
@@ -95,7 +96,7 @@ class CustomErrorWidget extends StatelessWidget {
                 onPressed: () => onRestart(context),
               ),
               Container(
-                height: Sizes.s50,
+                height: 50.w,
               ),
             ],
           ),

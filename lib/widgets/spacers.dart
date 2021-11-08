@@ -1,67 +1,66 @@
 import 'package:flutter/material.dart';
-
-import '../utils/sizes.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class P1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Padding(padding: EdgeInsets.all(Sizes.s1));
+    return Padding(padding: EdgeInsets.all(1.w));
   }
 }
 
 class P2 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Padding(padding: EdgeInsets.all(Sizes.s2));
+    return Padding(padding: EdgeInsets.all(2.w));
   }
 }
 
 class P5 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Padding(padding: EdgeInsets.all(Sizes.s5));
+    return Padding(padding: EdgeInsets.all(5.w));
   }
 }
 
 class P8 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Padding(padding: EdgeInsets.all(Sizes.s8));
+    return Padding(padding: EdgeInsets.all(8.w));
   }
 }
 
 class P10 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Padding(padding: EdgeInsets.all(Sizes.s10));
+    return Padding(padding: EdgeInsets.all(10.w));
   }
 }
 
 class PH10 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Padding(padding: EdgeInsets.symmetric(horizontal: Sizes.s10));
+    return Padding(padding: EdgeInsets.symmetric(horizontal: 10.w));
   }
 }
 
 class P20 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Padding(padding: EdgeInsets.all(Sizes.s20));
+    return Padding(padding: EdgeInsets.all(20.w));
   }
 }
 
 class P30 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Padding(padding: EdgeInsets.all(Sizes.s30));
+    return Padding(padding: EdgeInsets.all(30.w));
   }
 }
 
 class P40 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Padding(padding: EdgeInsets.all(Sizes.s40));
+    return Padding(padding: EdgeInsets.all(40.w));
   }
 }
 
@@ -86,8 +85,8 @@ class C1 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       color: color ?? Colors.transparent,
-      height: Sizes.s1,
-      width: Sizes.s1,
+      height: 1.w,
+      width: 1.w,
     );
   }
 }
@@ -101,8 +100,8 @@ class C2 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       color: color ?? Colors.transparent,
-      height: Sizes.s2,
-      width: Sizes.s2,
+      height: 2.w,
+      width: 2.w,
     );
   }
 }
@@ -116,8 +115,8 @@ class C3 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       color: color ?? Colors.transparent,
-      height: Sizes.s3,
-      width: Sizes.s3,
+      height: 3.w,
+      width: 3.w,
     );
   }
 }
@@ -131,8 +130,8 @@ class C4 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       color: color ?? Colors.transparent,
-      height: Sizes.s4,
-      width: Sizes.s4,
+      height: 4.w,
+      width: 4.w,
     );
   }
 }
@@ -146,8 +145,8 @@ class C5 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       color: color ?? Colors.transparent,
-      height: Sizes.s5,
-      width: Sizes.s5,
+      height: 5.w,
+      width: 5.w,
     );
   }
 }
@@ -161,8 +160,8 @@ class C6 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       color: color ?? Colors.transparent,
-      height: Sizes.s6,
-      width: Sizes.s6,
+      height: 6.w,
+      width: 6.w,
     );
   }
 }
@@ -176,8 +175,8 @@ class C8 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       color: color ?? Colors.transparent,
-      height: Sizes.s8,
-      width: Sizes.s8,
+      height: 8.w,
+      width: 8.w,
     );
   }
 }
@@ -191,8 +190,8 @@ class C10 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       color: color ?? Colors.transparent,
-      height: Sizes.s10,
-      width: Sizes.s10,
+      height: 10.w,
+      width: 10.w,
     );
   }
 }
@@ -206,8 +205,8 @@ class C15 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       color: color ?? Colors.transparent,
-      height: Sizes.s15,
-      width: Sizes.s15,
+      height: 15.w,
+      width: 15.w,
     );
   }
 }
@@ -221,8 +220,8 @@ class C20 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       color: color ?? Colors.transparent,
-      height: Sizes.s20,
-      width: Sizes.s20,
+      height: 20.w,
+      width: 20.w,
     );
   }
 }
@@ -236,8 +235,8 @@ class C40 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       color: color ?? Colors.transparent,
-      height: Sizes.s40,
-      width: Sizes.s40,
+      height: 40.w,
+      width: 40.w,
     );
   }
 }
@@ -251,8 +250,8 @@ class C30 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       color: color ?? Colors.transparent,
-      height: Sizes.s30,
-      width: Sizes.s30,
+      height: 30.w,
+      width: 30.w,
     );
   }
 }
@@ -266,8 +265,8 @@ class C50 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       color: color ?? Colors.transparent,
-      height: Sizes.s50,
-      width: Sizes.s50,
+      height: 50.w,
+      width: 50.w,
     );
   }
 }
@@ -281,8 +280,8 @@ class C100 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       color: color ?? Colors.transparent,
-      height: Sizes.s100,
-      width: Sizes.s100,
+      height: 100.w,
+      width: 100.w,
     );
   }
 }
@@ -296,8 +295,8 @@ class C150 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       color: color ?? Colors.transparent,
-      height: Sizes.s150,
-      width: Sizes.s150,
+      height: 150.w,
+      width: 150.w,
     );
   }
 }
