@@ -15,11 +15,12 @@ dependencies:
 
   #<editor-fold desc="UTILS">
   intl: ^0.17.0
-  flutter_screenutil: 5.0.0+2
+  flutter_screenutil: ^5.1.0
   recase: ^4.0.0
   after_layout: ^1.1.0
   cached_network_image: ^3.2.0
   focus_detector: ^2.0.1
+  visibility_detector: ^0.2.2
   #</editor-fold>
 
   #<editor-fold desc="LOCAL-DATABASE">

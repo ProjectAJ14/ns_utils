@@ -60,6 +60,7 @@ class Sizes {
         maxWidth: screenWidth,
         maxHeight: screenHeight,
       ),
+      context: context,
       orientation: orientation,
       designSize: Size(defaultScreenWidth, defaultScreenHeight),
     );
@@ -108,8 +109,8 @@ class Sizes {
     Status bar height px: ${ScreenUtil().statusBarHeight}dp
     Ratio of actual width dp to design draft px: ${ScreenUtil().scaleWidth}
     Ratio of actual height dp to design draft px: ${ScreenUtil().scaleHeight}
-    The ratio of font and width to the size of the design: ${ScreenUtil().scaleWidth * ScreenUtil().pixelRatio}
-    The ratio of  height width to the size of the design: ${ScreenUtil().scaleHeight * ScreenUtil().pixelRatio}
+    The ratio of font and width to the size of the design: ${ScreenUtil().scaleWidth}
+    The ratio of  height width to the size of the design: ${ScreenUtil().scaleHeight}
     ''');
   }
 }
