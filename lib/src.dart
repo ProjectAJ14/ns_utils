@@ -25,6 +25,7 @@ export 'extensions/string.dart';
 export 'extensions/widgets/gesture_detector.dart';
 export 'extensions/widgets/widgets.dart';
 export 'methods/conversion.dart';
+export 'methods/helper.dart';
 export 'services/shared_preferences/sp_service.dart';
 export 'utils/sizes.dart';
 export 'widgets/spacers.dart';
