@@ -1,6 +1,6 @@
 import 'dart:convert';
+
 import '../constants.dart';
-import '../methods/conversion.dart';
 import '../src.dart';
 
 /// extension methods for Map

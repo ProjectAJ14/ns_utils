@@ -1,5 +1,4 @@
 import 'package:flutter_test/flutter_test.dart';
-
 import 'package:ns_utils/src.dart';
 
 void main() {
@@ -19,8 +18,16 @@ void main() {
       expect('["1","2"]'.toList(), ["1", "2"]);
     });
     test('isNotBlank', () {
+      String? data;
+      expect(data.isNotBlank, false);
       expect(''.isNotBlank, false);
+      expect('   '.isNotBlank, false);
       expect('Ajay'.isNotBlank, true);
+    });
+    test('isEmptyOrNull', () {
+      String? data;
+      expect(data.isEmptyOrNull, true);
+      expect(''.isEmptyOrNull, true);
     });
     test('toINT', () {
       expect('12121'.toINT, 12121);

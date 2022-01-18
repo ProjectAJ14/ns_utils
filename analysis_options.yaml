@@ -9,5 +9,4 @@ linter:
 
 analyzer:
   exclude:
-    - test/extensions/*.dart
-    - test/methods/*.dart
+    - test/

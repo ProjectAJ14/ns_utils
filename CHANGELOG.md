@@ -1,3 +1,9 @@
+## [1.1.0]
+- Use device_info_plus instead of device_info
+- Use package_info_plus instead of package_info
+- Updated String extensions 
+- Added export for other packages
+
 ## [1.0.0]
 - Minor fixes on null safety. Thanks [Rajan](https://github.com/rajan-nonstopio)
 

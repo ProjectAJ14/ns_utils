@@ -4,7 +4,6 @@ import 'dart:math' as math;
 import 'package:flutter/material.dart';
 
 import '../constants.dart';
-import '../methods/conversion.dart';
 import '../src.dart';
 
 extension StringExtensions on String {
@@ -135,11 +134,7 @@ extension StringNullExtensions on String? {
   /// Returns true if s is neither null, empty nor is solely made of whitespace characters.
   ///
   bool get isNotBlank {
-    if (this != null) {
-      String data = this?.trim() ?? '';
-      return data.isNotEmpty;
-    } else {
-      return true;
-    }
+    if (isEmptyOrNull) return false;
+    return !this!.trim().isEmptyOrNull;
   }
 }
