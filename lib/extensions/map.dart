@@ -73,14 +73,14 @@ extension MapExtensions on Map {
   /// If value is NULL or not [List] type return default value [defaultString]
   ///
   // ignore: always_specify_types
-  Map getMap(String key) {
+  Map<String, dynamic> getMap(String key) {
     if (containsKey(key)) {
       if (this[key] is Map) {
         return this[key] ?? defaultMap;
       }
     }
     errorLogsNS("Map.getMap[$key] has incorrect data :  ${this[key]}");
-    return defaultMap;
+    return defaultMap as Map<String, dynamic>;
   }
 
   ///Add value to map if value is not null

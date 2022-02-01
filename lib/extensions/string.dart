@@ -119,6 +119,29 @@ extension StringExtensions on String {
   ///Add prefix if not empty else return empty string
   ///
   String get showDashIfEmpty => isEmpty ? '-' : this;
+
+  /// this will give last n characters of string
+  String lastNChars({int n = 1}) => substring(length - n);
+
+  ///this will give first n characters of string
+  String firstNChars({int n = 1}) => substring(0, n);
+
+  /// Truncates a long `String` in the middle while retaining the beginning and the end.
+  /// E
+  String truncateMiddle({int maxChars = 3}) {
+    if (isEmptyOrNull) {
+      return this;
+    }
+    if (maxChars <= 0) {
+      return this;
+    }
+    if (maxChars > length) {
+      return this;
+    }
+    int leftChars = (maxChars / 2).ceil();
+    int rightChars = maxChars - leftChars;
+    return '${firstNChars(n: leftChars)}...${lastNChars(n: rightChars)}';
+  }
 }
 
 extension StringNullExtensions on String? {
