@@ -121,27 +121,42 @@ extension StringExtensions on String {
   String get showDashIfEmpty => isEmpty ? '-' : this;
 
   /// this will give last n characters of string
-  String lastNChars({int n = 1}) => substring(length - n);
+  String lastNChars({int n = 1}) {
+    if (n > length || n < 1) return this;
+
+    return substring(length - n);
+  }
 
   ///this will give first n characters of string
-  String firstNChars({int n = 1}) => substring(0, n);
+  String firstNChars({int n = 1}) {
+    if (n > length || n < 1) return this;
+    return substring(0, n);
+  }
 
   /// Truncates a long `String` in the middle while retaining the beginning and the end.
-  /// E
+  ///
+  /// Example :
+  ///   'Hello World'.truncateMiddle(3) // 'Hel...rld'
+  ///
   String truncateMiddle({int maxChars = 3}) {
-    if (isEmptyOrNull) {
+    if (isEmptyOrNull || maxChars < 1) {
       return this;
     }
-    if (maxChars <= 0) {
+
+    if ((maxChars * 2) >= length) {
       return this;
     }
-    if (maxChars > length) {
-      return this;
-    }
-    int leftChars = (maxChars / 2).ceil();
-    int rightChars = maxChars - leftChars;
-    return '${firstNChars(n: leftChars)}...${lastNChars(n: rightChars)}';
+
+    return '${firstNChars(n: maxChars)}...${lastNChars(n: maxChars)}';
   }
+
+  String toCapitalized() =>
+      length > 0 ? '${this[0].toUpperCase()}${substring(1).toLowerCase()}' : '';
+
+  String toTitleCase() => replaceAll(RegExp(' +'), ' ')
+      .split(' ')
+      .map((String str) => str.toCapitalized())
+      .join(' ');
 }
 
 extension StringNullExtensions on String? {
