@@ -51,7 +51,9 @@ class CustomErrorWidget extends StatelessWidget {
                       height: 100,
                       width: 100,
                     ),
-                    C20(),
+                    SizedBox(
+                      height: 20,
+                    ),
                     Text(
                       _crashFinalTitle,
                       style: TextStyle(
@@ -94,7 +96,7 @@ class CustomErrorWidget extends StatelessWidget {
                 child: Text(_restartApp),
                 onPressed: () => onRestart(context),
               ),
-              Container(
+              SizedBox(
                 height: 50,
               ),
             ],
