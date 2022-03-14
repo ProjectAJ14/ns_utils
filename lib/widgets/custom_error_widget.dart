@@ -33,8 +33,8 @@ class CustomErrorWidget extends StatelessWidget {
       child: SafeArea(
         child: Container(
           decoration: BoxDecoration(border: Border.all(color: Colors.red)),
-          padding: EdgeInsets.symmetric(horizontal: 30.w),
-          constraints: BoxConstraints(maxHeight: screenWidth / 2.w),
+          padding: EdgeInsets.symmetric(horizontal: 30),
+          constraints: BoxConstraints(maxHeight: screenWidth / 2),
           child: ListView(
             shrinkWrap: true,
             children: <Widget>[
@@ -48,14 +48,14 @@ class CustomErrorWidget extends StatelessWidget {
                         logoAsset,
                         fit: BoxFit.contain,
                       ),
-                      height: 100.w,
-                      width: 100.w,
+                      height: 100,
+                      width: 100,
                     ),
                     C20(),
                     Text(
                       _crashFinalTitle,
                       style: TextStyle(
-                        fontSize: 20.w,
+                        fontSize: 20,
                       ),
                       textAlign: TextAlign.center,
                     ),
@@ -63,7 +63,7 @@ class CustomErrorWidget extends StatelessWidget {
                     Text(
                       _crashFinalMessage,
                       style: TextStyle(
-                        fontSize: 18.w,
+                        fontSize: 18,
                       ),
                       textAlign: TextAlign.justify,
                     ),
@@ -76,7 +76,7 @@ class CustomErrorWidget extends StatelessWidget {
                     Text(
                       '${errorDetails.summary.toString()}',
                       style: TextStyle(
-                        fontSize: 18.sp,
+                        fontSize: 18,
                         color: Colors.red,
                       ),
                     ),
@@ -84,7 +84,7 @@ class CustomErrorWidget extends StatelessWidget {
                     Text(
                       "$errorDetails",
                       style: TextStyle(
-                        fontSize: 13.sp,
+                        fontSize: 13,
                         color: Colors.red,
                       ),
                     ),
@@ -95,7 +95,7 @@ class CustomErrorWidget extends StatelessWidget {
                 onPressed: () => onRestart(context),
               ),
               Container(
-                height: 50.w,
+                height: 50,
               ),
             ],
           ),
