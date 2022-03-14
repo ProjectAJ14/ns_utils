@@ -42,7 +42,9 @@ class CustomErrorWidget extends StatelessWidget {
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: <Widget>[
-                    C20(),
+                    SizedBox(
+                      height: 20,
+                    ),
                     Container(
                       child: Image.asset(
                         logoAsset,
@@ -61,7 +63,9 @@ class CustomErrorWidget extends StatelessWidget {
                       ),
                       textAlign: TextAlign.center,
                     ),
-                    C20(),
+                    SizedBox(
+                      height: 20,
+                    ),
                     Text(
                       _crashFinalMessage,
                       style: TextStyle(
@@ -71,7 +75,9 @@ class CustomErrorWidget extends StatelessWidget {
                     ),
                   ],
                 ),
-              C20(),
+              SizedBox(
+                height: 20,
+              ),
               if (showErrorDetails)
                 Column(
                   children: <Widget>[
@@ -82,7 +88,9 @@ class CustomErrorWidget extends StatelessWidget {
                         color: Colors.red,
                       ),
                     ),
-                    C20(),
+                    SizedBox(
+                      height: 20,
+                    ),
                     Text(
                       "$errorDetails",
                       style: TextStyle(
