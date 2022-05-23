@@ -56,12 +56,7 @@ class Sizes {
     }
 
     ScreenUtil.init(
-      BoxConstraints(
-        maxWidth: screenWidth,
-        maxHeight: screenHeight,
-      ),
-      context: context,
-      orientation: orientation,
+      context,
       designSize: Size(defaultScreenWidth, defaultScreenHeight),
     );
 
