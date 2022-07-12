@@ -84,7 +84,7 @@ packages:
       name: device_info_plus
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "3.2.3"
+    version: "4.0.0"
   device_info_plus_linux:
     dependency: transitive
     description:
@@ -194,9 +194,11 @@ packages:
   focus_detector:
     dependency: "direct main"
     description:
-      name: focus_detector
-      url: "https://pub.dartlang.org"
-    source: hosted
+      path: "."
+      ref: "support-flutter-3.0"
+      resolved-ref: "7cf57845b773a7176435f147057f951d4c27c0b9"
+      url: "https://github.com/dessonchan/focus_detector.git"
+    source: git
     version: "2.0.1"
   http:
     dependency: transitive
@@ -531,7 +533,7 @@ packages:
       name: visibility_detector
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.2.2"
+    version: "0.3.3"
   win32:
     dependency: transitive
     description:

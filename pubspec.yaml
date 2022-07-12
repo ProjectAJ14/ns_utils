@@ -19,8 +19,11 @@ dependencies:
   recase: ^4.0.0
   after_layout: ^1.2.0
   cached_network_image: ^3.2.1
-  focus_detector: ^2.0.1
-  visibility_detector: ^0.2.2
+  focus_detector:
+    git:
+      url: https://github.com/dessonchan/focus_detector.git
+      ref: support-flutter-3.0
+  visibility_detector: ^0.3.3
   #</editor-fold>
 
   #<editor-fold desc="LOCAL-DATABASE">
@@ -28,7 +31,7 @@ dependencies:
   #</editor-fold>
 
   #<editor-fold desc="DEVICE APIS">
-  device_info_plus: ^3.2.3
+  device_info_plus: ^4.0.0
   package_info_plus: ^1.4.2
   #</editor-fold>
 
