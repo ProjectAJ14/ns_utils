@@ -1,5 +1,5 @@
 # ns_utils
-[![](https://img.shields.io/badge/build-1.1.0-brightgreen)][repo_link]
+[![](https://img.shields.io/badge/build-1.1.1-brightgreen)][repo_link]
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 [![style: flutter_lints][badge]][badge_link]
 
@@ -411,7 +411,7 @@ There are couple of ways in which you can contribute.
 <br>
 
 
-[badge]: https://img.shields.io/badge/style-effective_dart-40c4ff.svg
+[badge]: https://img.shields.io/badge/style-flutter_lints-40c4ff.svg
 [badge_link]: https://pub.dev/packages/flutter_lints
 [repo_link]: https://github.com/ProjectAJ14/ns_utils
 
