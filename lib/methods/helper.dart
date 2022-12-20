@@ -1,7 +1,9 @@
-import '../utils/crossplat_object_id/src/objectid.dart';
+import 'package:objectid/objectid.dart';
 
 String generateDbId() {
-  return ObjectId().toHexString();
+  return ObjectId().hexString;
 }
 
-String get uniqueId => ObjectId().toHexString();
+String get uniqueId => ObjectId().hexString;
+
+String get uniqueObjectId => ObjectId().hexString;

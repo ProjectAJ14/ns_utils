@@ -1,4 +1,3 @@
-// Package imports:
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../src.dart';
@@ -8,7 +7,7 @@ class SPService {
 
   static late SharedPreferences instance;
 
-  static Future<Null> init() async {
+  static Future<void> init() async {
     instance = await SharedPreferences.getInstance();
   }
 

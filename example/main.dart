@@ -10,33 +10,37 @@ void main() {
       logoAsset: '<Your app logo asset>',
       showErrorDetails: true, //this should be set to false in production
       onRestart: (BuildContext context) {
-        context.makeFirst(HomeScreen());
+        context.makeFirst(const HomeScreen());
       },
     );
   };
   //</editor-fold>
 
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       home: HomeScreen(),
     );
   }
 }
 
 class HomeScreen extends StatefulWidget {
+  const HomeScreen({Key? key}) : super(key: key);
+
   @override
-  _HomeScreenState createState() => _HomeScreenState();
+  State<HomeScreen> createState() => _HomeScreenState();
 }
 
 class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       body: Placeholder(),
     );
   }

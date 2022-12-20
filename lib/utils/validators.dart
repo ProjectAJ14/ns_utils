@@ -16,26 +16,26 @@ const String enterEmail = "Enter email";
 const String enterPassword = "Enter password";
 const String enterValidPassword = "Enter valid password";
 const String emptyMessage = "Can't be Empty";
-const String passwordValidationMsg =
-    "Minimum 6 characters,include upper and lower case letters,numbers,symbols(@,#,\$,%)";
+const String passwordValidationMsg = "Minimum 6 characters,include upper and "
+    "lower case letters,numbers,symbols(@,#,\$,%)";
 
 class ValidatorUtil {
   ValidatorUtil._();
 
-  static bool isFormValid(GlobalKey<FormState>? _formKey) {
+  static bool isFormValid(GlobalKey<FormState>? formKey) {
     try {
-      final FormState? form = _formKey?.currentState;
+      final FormState? form = formKey?.currentState;
       if (form != null) {
         if (form.validate()) {
           form.save();
-          appLogsNS('$_formKey isFormValid:true');
+          appLogsNS('$formKey isFormValid:true');
           return true;
         }
       } else {
-        errorLogsNS('$_formKey isFormValid[_formKey?.currentState] is NULL');
+        errorLogsNS('$formKey isFormValid[_formKey?.currentState] is NULL');
       }
     } on Exception catch (e, s) {
-      errorLogsNS('$_formKey isFormValid', e, s);
+      errorLogsNS('$formKey isFormValid', e, s);
     }
     return false;
   }

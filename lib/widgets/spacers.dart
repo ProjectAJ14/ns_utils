@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class P1 extends StatelessWidget {
+  const P1({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Padding(padding: EdgeInsets.all(1.w));
@@ -9,6 +11,8 @@ class P1 extends StatelessWidget {
 }
 
 class P2 extends StatelessWidget {
+  const P2({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Padding(padding: EdgeInsets.all(2.w));
@@ -16,6 +20,8 @@ class P2 extends StatelessWidget {
 }
 
 class P5 extends StatelessWidget {
+  const P5({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Padding(padding: EdgeInsets.all(5.w));
@@ -23,6 +29,8 @@ class P5 extends StatelessWidget {
 }
 
 class P8 extends StatelessWidget {
+  const P8({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Padding(padding: EdgeInsets.all(8.w));
@@ -30,6 +38,8 @@ class P8 extends StatelessWidget {
 }
 
 class P10 extends StatelessWidget {
+  const P10({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Padding(padding: EdgeInsets.all(10.w));
@@ -37,6 +47,8 @@ class P10 extends StatelessWidget {
 }
 
 class PH10 extends StatelessWidget {
+  const PH10({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Padding(padding: EdgeInsets.symmetric(horizontal: 10.w));
@@ -44,6 +56,8 @@ class PH10 extends StatelessWidget {
 }
 
 class P20 extends StatelessWidget {
+  const P20({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Padding(padding: EdgeInsets.all(20.w));
@@ -51,6 +65,8 @@ class P20 extends StatelessWidget {
 }
 
 class P30 extends StatelessWidget {
+  const P30({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Padding(padding: EdgeInsets.all(30.w));
@@ -58,6 +74,8 @@ class P30 extends StatelessWidget {
 }
 
 class P40 extends StatelessWidget {
+  const P40({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Padding(padding: EdgeInsets.all(40.w));
@@ -69,7 +87,7 @@ class C0 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox.shrink();
+    return SizedBox.shrink(key: key);
   }
 }
 

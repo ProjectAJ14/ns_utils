@@ -1,7 +1,7 @@
 # ns_utils
 [![](https://img.shields.io/badge/build-1.1.0-brightgreen)][repo_link]
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
-[![style: effective dart][badge]][badge_link]
+[![style: flutter_lints][badge]][badge_link]
 
 
 
@@ -401,10 +401,19 @@ There are couple of ways in which you can contribute.
   cannot be overstated!
 - Send in a Pull Request :-)
 
+<br>
+<div align="center" >
+  <p>Thanks to all contributors of this package</p>
+  <a href="https://github.com/ProjectAJ14/ns_utils/graphs/contributors">
+    <img src="https://contrib.rocks/image?repo=ProjectAJ14/ns_utils" />
+  </a>
+</div>
+<br>
+
 
 [badge]: https://img.shields.io/badge/style-effective_dart-40c4ff.svg
-[badge_link]: https://pub.dev/packages/effective_dart
-[repo_link]: https://github.com/ajaykumargithub2114/ns_utils
+[badge_link]: https://pub.dev/packages/flutter_lints
+[repo_link]: https://github.com/ProjectAJ14/ns_utils
 
 
 

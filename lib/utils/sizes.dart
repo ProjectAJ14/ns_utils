@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-// Package imports:
-
 import '../src.dart';
 
 const Size _defaultSize = Size(360, 690);
@@ -24,8 +22,6 @@ class Sizes {
   ///
   static void initScreenAwareSizes(
     BuildContext context, {
-    required BoxConstraints constraints,
-    Orientation orientation = Orientation.portrait,
     Size designSize = _defaultSize,
   }) {
     if (initialized) {
@@ -56,12 +52,7 @@ class Sizes {
     }
 
     ScreenUtil.init(
-      BoxConstraints(
-        maxWidth: screenWidth,
-        maxHeight: screenHeight,
-      ),
-      context: context,
-      orientation: orientation,
+      context,
       designSize: Size(defaultScreenWidth, defaultScreenHeight),
     );
 

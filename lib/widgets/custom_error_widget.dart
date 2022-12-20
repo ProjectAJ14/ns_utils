@@ -7,7 +7,10 @@ String get _restartApp => "Restart App!";
 String get _crashFinalTitle => "Abnormal Behavior!";
 
 String get _crashFinalMessage =>
-    "It looks like the App is behaving abnormally. We have notified our engineering team about it, and you should get an update soon.\nWe apologize for the inconvenience caused.";
+    "It looks like the App is behaving abnormally. "
+    "We have notified our engineering team about it, "
+    "and you should get an update soon.\n"
+    "We apologize for the inconvenience caused.";
 
 ///[CustomErrorWidget] an Custom Error widget
 ///
@@ -42,16 +45,16 @@ class CustomErrorWidget extends StatelessWidget {
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: <Widget>[
-                    C20(),
-                    Container(
+                    const C20(),
+                    SizedBox(
+                      height: 100.w,
+                      width: 100.w,
                       child: Image.asset(
                         logoAsset,
                         fit: BoxFit.contain,
                       ),
-                      height: 100.w,
-                      width: 100.w,
                     ),
-                    C20(),
+                    const C20(),
                     Text(
                       _crashFinalTitle,
                       style: TextStyle(
@@ -59,7 +62,7 @@ class CustomErrorWidget extends StatelessWidget {
                       ),
                       textAlign: TextAlign.center,
                     ),
-                    C20(),
+                    const C20(),
                     Text(
                       _crashFinalMessage,
                       style: TextStyle(
@@ -69,18 +72,18 @@ class CustomErrorWidget extends StatelessWidget {
                     ),
                   ],
                 ),
-              C20(),
+              const C20(),
               if (showErrorDetails)
                 Column(
                   children: <Widget>[
                     Text(
-                      '${errorDetails.summary.toString()}',
+                      errorDetails.summary.toString(),
                       style: TextStyle(
                         fontSize: 18.sp,
                         color: Colors.red,
                       ),
                     ),
-                    C20(),
+                    const C20(),
                     Text(
                       "$errorDetails",
                       style: TextStyle(

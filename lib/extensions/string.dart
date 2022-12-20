@@ -32,7 +32,8 @@ extension StringExtensions on String {
     return defaultList;
   }
 
-  /// Returns true if s is neither null, empty nor is solely made of whitespace characters.
+  /// Returns true if s is neither null,
+  /// empty nor is solely made of whitespace characters.
   ///
   bool get isNotBlank => trim().isNotEmpty;
 
@@ -131,7 +132,8 @@ extension StringNullExtensions on String? {
     return false;
   }
 
-  /// Returns true if s is neither null, empty nor is solely made of whitespace characters.
+  /// Returns true if s is neither null,
+  /// empty nor is solely made of whitespace characters.
   ///
   bool get isNotBlank {
     if (isEmptyOrNull) return false;

@@ -1,6 +1,4 @@
-// Package imports:
 import 'package:flutter_test/flutter_test.dart';
-
 import 'package:ns_utils/src.dart';
 
 void main() {

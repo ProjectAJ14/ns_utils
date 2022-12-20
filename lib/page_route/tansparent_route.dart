@@ -29,14 +29,17 @@ class TransparentRoute<T> extends PageRoute<T> {
 
   @override
   Duration get transitionDuration =>
-      Duration(milliseconds: _transitionDuration);
+      const Duration(milliseconds: _transitionDuration);
 
   @override
   String get debugLabel => '${super.debugLabel}(${settings.name})';
 
   @override
-  Widget buildPage(BuildContext context, Animation<double> animation,
-      Animation<double> secondaryAnimation) {
+  Widget buildPage(
+    BuildContext context,
+    Animation<double> animation,
+    Animation<double> secondaryAnimation,
+  ) {
     final Widget result = builder(context);
     return CupertinoFullscreenDialogTransition(
       primaryRouteAnimation: animation,
