@@ -7,7 +7,6 @@ export 'package:cached_network_image/cached_network_image.dart';
 export 'package:device_info_plus/device_info_plus.dart';
 export 'package:flutter_screenutil/flutter_screenutil.dart';
 export 'package:flutter_spinkit/flutter_spinkit.dart';
-export 'package:focus_detector/focus_detector.dart';
 export 'package:package_info_plus/package_info_plus.dart';
 export 'package:recase/recase.dart';
 export 'package:visibility_detector/visibility_detector.dart';
@@ -27,6 +26,7 @@ export 'extensions/widgets/widgets.dart';
 export 'methods/conversion.dart';
 export 'methods/helper.dart';
 export 'services/shared_preferences/sp_service.dart';
+export 'utils/focus_detector.dart';
 export 'utils/sizes.dart';
 export 'widgets/spacers.dart';
 
@@ -54,7 +54,7 @@ ErrorLogCallBack errorLogsNS = _errorLogs;
 class NSUtils {
   static NSUtils instance = NSUtils();
 
-  Future<Null> init({
+  Future<void> init({
     LogCallBack? appLogsFunction,
     ErrorLogCallBack? errorLogsFunction,
   }) async {

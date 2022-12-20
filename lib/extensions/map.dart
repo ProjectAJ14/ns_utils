@@ -105,7 +105,7 @@ extension MapExtensions on Map {
   String toPretty() {
     String data = defaultString;
     try {
-      JsonEncoder encoder = JsonEncoder.withIndent('  ', toEncodable);
+      JsonEncoder encoder = const JsonEncoder.withIndent('  ', toEncodable);
       data = encoder.convert(this);
     } on Exception catch (e, s) {
       errorLogsNS("Error in toPretty\n\n *$this*", e, s);

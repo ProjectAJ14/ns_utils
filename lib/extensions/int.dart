@@ -1,23 +1,24 @@
 import '../constants.dart';
 
 extension IntExtensions on int {
-  /// If value is NULL or not in [covered cases] return default value [defaultString]
+  /// If value is NULL or not in [covered cases]
+  /// return default value [defaultString]
   /// Else returns the mapped value
   ///
   String get dayPrefix {
-    String _prefix = defaultString;
+    String prefix = defaultString;
     switch (this) {
       case -1:
-        _prefix = 'Yesterday';
+        prefix = 'Yesterday';
         break;
       case 0:
-        _prefix = 'Today';
+        prefix = 'Today';
         break;
       case 1:
-        _prefix = 'Tomorrow';
+        prefix = 'Tomorrow';
         break;
     }
-    return _prefix;
+    return prefix;
   }
 
   /// Convert this integer into boolean.

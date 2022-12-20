@@ -1,3 +1,6 @@
+## [1.1.1]
+- Updated plugins
+
 ## [1.1.0]
 - Use device_info_plus instead of device_info
 - Use package_info_plus instead of package_info

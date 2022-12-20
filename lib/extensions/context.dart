@@ -41,28 +41,34 @@ extension ContextExtensions on BuildContext {
       name: screen.toString(),
     );
     if (transparent) {
-      return Navigator.of(this).push<T>(TransparentRoute<T>(
-        builder: (_) => screen,
-        settings: settings,
-      ));
-    } else {
-      if (isCupertino) {
-        return Navigator.of(this).push<T>(CupertinoPageRoute<T>(
+      return Navigator.of(this).push<T>(
+        TransparentRoute<T>(
           builder: (_) => screen,
           settings: settings,
-        ));
+        ),
+      );
+    } else {
+      if (isCupertino) {
+        return Navigator.of(this).push<T>(
+          CupertinoPageRoute<T>(
+            builder: (_) => screen,
+            settings: settings,
+          ),
+        );
       }
-      return Navigator.of(this).push<T>(MaterialPageRoute<T>(
-        builder: (_) => screen,
-        settings: settings,
-      ));
+      return Navigator.of(this).push<T>(
+        MaterialPageRoute<T>(
+          builder: (_) => screen,
+          settings: settings,
+        ),
+      );
     }
   }
 
   /// Replace the current route of the navigator by pushing the given route and
   /// then disposing the previous route.
   ///
-  Future<Null> replace(
+  Future<void> replace(
     Widget screen, {
     bool transparent = false,
     bool isCupertino = false,
@@ -72,23 +78,29 @@ extension ContextExtensions on BuildContext {
     );
     if (transparent) {
       // ignore: always_specify_types
-      return Navigator.of(this).pushReplacement(TransparentRoute(
-        builder: (_) => screen,
-        settings: settings,
-      ));
+      return Navigator.of(this).pushReplacement(
+        TransparentRoute(
+          builder: (_) => screen,
+          settings: settings,
+        ),
+      );
     } else {
       if (isCupertino) {
         // ignore: always_specify_types
-        return Navigator.of(this).pushReplacement(CupertinoPageRoute(
-          builder: (_) => screen,
-          settings: settings,
-        ));
+        return Navigator.of(this).pushReplacement(
+          CupertinoPageRoute(
+            builder: (_) => screen,
+            settings: settings,
+          ),
+        );
       }
       // ignore: always_specify_types
-      return Navigator.of(this).pushReplacement(MaterialPageRoute(
-        builder: (_) => screen,
-        settings: settings,
-      ));
+      return Navigator.of(this).pushReplacement(
+        MaterialPageRoute(
+          builder: (_) => screen,
+          settings: settings,
+        ),
+      );
     }
   }
 
