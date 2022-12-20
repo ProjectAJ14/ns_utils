@@ -8,5 +8,11 @@ void main() {
       expect([].toJson(), '[]');
       expect(['123', '1234'].toJson(), '["123","1234"]');
     });
+
+    test('containWithoutCase', () {
+      List<String> list = ['Test', 'User'];
+      expect(list.containWithoutCase('test'), true);
+      expect(list.containWithoutCase('User1'), false);
+    });
   });
 }

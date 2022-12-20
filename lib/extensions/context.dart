@@ -77,7 +77,6 @@ extension ContextExtensions on BuildContext {
       name: screen.toString(),
     );
     if (transparent) {
-      // ignore: always_specify_types
       return Navigator.of(this).pushReplacement(
         TransparentRoute(
           builder: (_) => screen,
@@ -86,7 +85,6 @@ extension ContextExtensions on BuildContext {
       );
     } else {
       if (isCupertino) {
-        // ignore: always_specify_types
         return Navigator.of(this).pushReplacement(
           CupertinoPageRoute(
             builder: (_) => screen,
@@ -94,7 +92,6 @@ extension ContextExtensions on BuildContext {
           ),
         );
       }
-      // ignore: always_specify_types
       return Navigator.of(this).pushReplacement(
         MaterialPageRoute(
           builder: (_) => screen,
@@ -149,7 +146,6 @@ extension ContextExtensions on BuildContext {
   /// Pops the top-most route off the navigator till the first route.
   ///
   void popToFirst() {
-    // ignore: always_specify_types
     Navigator.of(this).popUntil((predicate) {
       return predicate.isFirst;
     });

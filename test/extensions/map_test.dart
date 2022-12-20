@@ -34,7 +34,6 @@ void main() {
       expect(data.getDouble('key'), 0);
     });
     test('getString', () {
-      // ignore: omit_local_variable_types
       Map data = {'id': null};
       expect(data.getString('key'), '');
       expect(data.getString('id'), '');
@@ -91,8 +90,7 @@ void main() {
         "phone": "+1 (985) 469-2418",
         "address": "181 Tilden Avenue, Hamilton, Idaho, 2062",
         "about":
-            // ignore: lines_longer_than_80_chars
-            "Fugiat consectetur exercitation ex eiusmod officia ex exercitation et est enim cillum consectetur deserunt fugiat. Ex aliqua cupidatat consectetur reprehenderit. Voluptate nisi ipsum magna aliqua deserunt consectetur dolor occaecat fugiat labore. Sit Lorem elit duis deserunt ipsum adipisicing amet. Ullamco esse commodo et laborum minim. Sunt et exercitation veniam magna aute.",
+            """Fugiat consectetur exercitation ex eiusmod officia ex exercitation et est enim cillum consectetur deserunt fugiat. Ex aliqua cupidatat consectetur reprehenderit. Voluptate nisi ipsum magna aliqua deserunt consectetur dolor occaecat fugiat labore. Sit Lorem elit duis deserunt ipsum adipisicing amet. Ullamco esse commodo et laborum minim. Sunt et exercitation veniam magna aute.""",
         "registered": "Thursday, November 2, 2017 10:07 PM",
         "latitude": "-36.620306",
         "longitude": "128.527698",
@@ -120,5 +118,30 @@ void main() {
       };
       expect(data.nullProtected, {"key": 1});
     });
+
+    test("getSDMap", (() {
+      Map data = {
+        'key': 1,
+        'key2': null,
+        'key3': {
+          'key4': 1,
+          'key5': null,
+        }
+      };
+      expect(data.getSDMap('key'), {});
+      expect(data.getSDMap('key2'), isA<Map<String, dynamic>>());
+      expect(data.getSDMap('key3'), {"key4": 1, "key5": null});
+    }));
+
+    test("getBoolWithDefaultValue", (() {
+      Map data = {
+        'key': false,
+        'key2': null,
+        'key3': true,
+      };
+      expect(data.getBoolWithDefaultValue('key', defaultValue: true), false);
+      expect(data.getBoolWithDefaultValue('key2', defaultValue: true), true);
+      expect(data.getBoolWithDefaultValue('key3', defaultValue: true), true);
+    }));
   });
 }
