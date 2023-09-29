@@ -16,10 +16,12 @@ const String defaultString = '';
 
 /// Default value for Map
 ///
-// ignore: always_specify_types
 const Map defaultMap = {};
+
+/// Default value for Map<String, dynamic>
+///
+const Map<String, dynamic> defaultSDMap = {};
 
 /// Default value for List
 ///
-// ignore: always_specify_types
 const List defaultList = [];

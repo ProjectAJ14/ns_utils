@@ -9,7 +9,6 @@ import '../src.dart';
 extension StringExtensions on String {
   ///JSON String to Map using[json.decode]
   ///
-  // ignore: always_specify_types
   Map toMap() {
     try {
       if (isEmpty) return defaultMap;
@@ -22,7 +21,6 @@ extension StringExtensions on String {
 
   ///JSON String to List using[json.decode]
   ///
-  // ignore: always_specify_types
   List toList() {
     try {
       return json.decode(this);
@@ -120,6 +118,36 @@ extension StringExtensions on String {
   ///Add prefix if not empty else return empty string
   ///
   String get showDashIfEmpty => isEmpty ? '-' : this;
+
+  /// this will give last n characters of string
+  String lastNChars({int n = 1}) {
+    if (n > length || n < 1) return this;
+
+    return substring(length - n);
+  }
+
+  ///this will give first n characters of string
+  String firstNChars({int n = 1}) {
+    if (n > length || n < 1) return this;
+    return substring(0, n);
+  }
+
+  /// Truncates a long `String` in the middle while retaining the beginning and the end.
+  ///
+  /// Example :
+  ///   'Hello World'.truncateMiddle(3) // 'Hel...rld'
+  ///
+  String truncateMiddle({int maxChars = 3, String truncateKey = '...'}) {
+    if (isEmptyOrNull || maxChars < 1) {
+      return this;
+    }
+
+    if ((maxChars * 2) >= length) {
+      return this;
+    }
+
+    return '${firstNChars(n: maxChars)}$truncateKey${lastNChars(n: maxChars)}';
+  }
 }
 
 extension StringNullExtensions on String? {

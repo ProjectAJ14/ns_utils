@@ -5,7 +5,6 @@ import '../src.dart';
 
 /// extension methods for Map
 ///
-// ignore: always_specify_types
 extension MapExtensions on Map {
   /// Reads a [key] value of [bool] type from [Map].
   ///
@@ -57,7 +56,6 @@ extension MapExtensions on Map {
   ///
   /// If value is NULL or not [List] type return empty List[defaultList]
   ///
-  // ignore: always_specify_types
   List getList(String key) {
     if (containsKey(key)) {
       if (this[key] is List) {
@@ -72,7 +70,6 @@ extension MapExtensions on Map {
   ///
   /// If value is NULL or not [List] type return default value [defaultString]
   ///
-  // ignore: always_specify_types
   Map getMap(String key) {
     if (containsKey(key)) {
       if (this[key] is Map) {
@@ -81,6 +78,20 @@ extension MapExtensions on Map {
     }
     errorLogsNS("Map.getMap[$key] has incorrect data :  ${this[key]}");
     return defaultMap;
+  }
+
+  /// Reads a [key] value of [Map<String, dynamic>] type from [Map].
+  ///
+  /// If value is NULL or not [Map<String, dynamic>] type return default value [defaultSDMap]
+  ///
+  Map<String, dynamic> getSDMap(String key) {
+    if (containsKey(key)) {
+      if (this[key] is Map) {
+        return this[key] ?? defaultSDMap;
+      }
+    }
+    errorLogsNS("Map.getMap[$key] has incorrect data :  ${this[key]}");
+    return defaultSDMap;
   }
 
   ///Add value to map if value is not null
@@ -115,13 +126,22 @@ extension MapExtensions on Map {
 
   /// Returns a new map with null keys or values removed
   ///
-  // ignore: always_specify_types
-  Map<String, dynamic> get nullProtected => {...this}
-    // ignore: always_specify_types
-    ..removeWhere((String key, value) => value == null);
+  Map<String, dynamic> get nullProtected =>
+      {...this}..removeWhere((String key, value) => value == null);
+
+  /// Reads a [key] value of [bool] type from [Map].
+  /// If value is NULL or not [bool] type return default value [defaultBool]
+  ///
+  bool getBoolWithDefaultValue(String key, {bool defaultValue = defaultBool}) {
+    if (containsKey(key)) {
+      if (this[key] is bool) {
+        return this[key] ?? defaultValue;
+      }
+    }
+    return defaultValue;
+  }
 }
 
-// ignore: always_specify_types, type_annotate_public_apis
 dynamic toEncodable(object) {
   if (object is String ||
       object is num ||
