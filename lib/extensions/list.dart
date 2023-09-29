@@ -5,7 +5,6 @@ import '../src.dart';
 
 /// extension methods for List
 ///
-// ignore: always_specify_types
 extension ListExtensions on List {
   ///List to JSON using[json.encode]
   ///
@@ -29,5 +28,12 @@ extension ListExtensions on List {
       errorLogsNS("ERROR in toComaSeparatedValues", e, s);
     }
     return data;
+  }
+}
+
+extension ListStringExtension on List<String> {
+  /// check if list contains value without considering case
+  bool containWithoutCase(String value) {
+    return any((element) => element.toLowerCase() == value.toLowerCase());
   }
 }

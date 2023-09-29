@@ -1,5 +1,5 @@
 # ns_utils
-[![](https://img.shields.io/badge/build-1.1.0-brightgreen)][repo_link]
+[![](https://img.shields.io/badge/build-1.1.2-brightgreen)][repo_link]
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 [![style: flutter_lints][badge]][badge_link]
 

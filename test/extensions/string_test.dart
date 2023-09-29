@@ -59,5 +59,33 @@ void main() {
       String value = DateTime(2020, 08, 01).toIso8601String();
       expect(value.toDateTime(), DateTime(2020, 08, 01));
     });
+
+    test('truncate Middle', () {
+      expect(''.truncateMiddle(), '');
+      expect('12'.truncateMiddle(), '12');
+      expect('123456'.truncateMiddle(), '123456');
+      expect('1234567'.truncateMiddle(), '123...567');
+      expect('1234567890'.truncateMiddle(maxChars: 2), '12...90');
+      expect(
+        '1234567890'.truncateMiddle(maxChars: 2, truncateKey: "-"),
+        '12-90',
+      );
+    });
+
+    test('first N char', () {
+      expect(''.firstNChars(), '');
+      expect('12'.firstNChars(n: 5), '12');
+      expect('123456'.firstNChars(n: 2), '12');
+      expect('1234567'.firstNChars(n: 20), '1234567');
+      expect('1234567'.firstNChars(n: -20), '1234567');
+    });
+
+    test('last N char', () {
+      expect(''.lastNChars(), '');
+      expect('12'.lastNChars(n: 5), '12');
+      expect('123456'.lastNChars(n: 2), '56');
+      expect('1234567'.lastNChars(n: 20), '1234567');
+      expect('1234567'.lastNChars(n: -20), '1234567');
+    });
   });
 }
