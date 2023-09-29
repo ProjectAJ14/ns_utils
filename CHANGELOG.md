@@ -1,3 +1,10 @@
+## [1.1.2]
+- Code Refactor & Updated plugins
+- Add String extensions for firstNChars, lastNChars, truncateMiddle.
+- Add Map extensions for getSDMap which returns Map<String, dynamic>.
+- Add Map extensions for getBoolWithDefaultValue which returns bool.
+- Add List<String> extensions for check containWithoutCase which returns bool.
+
 ## [1.1.1]
 - Updated plugins
 
